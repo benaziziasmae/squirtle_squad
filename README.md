@@ -18,3 +18,4 @@ Team Member:
 - Asmae Benazizi
 - Lydia Zhang
 - Aryana Akhavan
+- Kun Zhao
