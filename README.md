@@ -3,5 +3,5 @@
 ## Overview of the project
 
 ## Resources 
-- Data 
-- Softwares:
+- Data :
+- Software :
