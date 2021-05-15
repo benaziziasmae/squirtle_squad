@@ -5,6 +5,7 @@
 ## Resources 
 - Data :
 - Software :
+- Trello https://trello.com/b/3LoHN9J1/final-project-squirtlesquad
 
 
 ## Team's way of communication
