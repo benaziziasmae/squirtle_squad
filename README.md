@@ -20,7 +20,7 @@ The database shall have its entries pulled from the Pokemon TCG API. This API co
 
 The final visualization is anticipated as an HTML page that would consist of prices & image of the card. 
 
-## Team Members
+## Team Members & Project Map
 
 Due to the nature & scope of the project, roles will be similar but not identical week to week with some roles being responsibilities of multiple team members. 
 
@@ -31,6 +31,10 @@ Due to the nature & scope of the project, roles will be similar but not identica
 | Ian Fan        | X / △ |             |             |             |
 | Kun Zhao       | ○       |             |             |             |
 | Lydia Zhang    | X / ○    |             |             |             |
+
+Team members communicated through Slack & voice communications supported by Microsoft Teams & Google Hangouts.
+
+Current tasks, scratchpad & brainstorm ideas are on Google sheets (Link not provided for privacy) & [Trello](https://trello.com/b/3LoHN9J1/final-project-squirtlesquad). A Gantt chart is within the realm of possibility to be added.
 
 ## Resources
 
@@ -54,3 +58,4 @@ Languages, Libraries, Software Used for this project are listed by tasks.
 Under consideration -
 
 * HTML
+
