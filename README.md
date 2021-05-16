@@ -8,13 +8,13 @@ This repository hosts source code & background information for a Pokemon TCG car
 
 We decided on this topic for something light-hearted that demonstrates the mastery of data visualization, data base administration & management, & machine learning. For all intents & purposes, the project shall hence forth be referred to as an 'app'. A flow chart representing the processes of the app is shown below (flow chart will be regularly updated & made aesthetically pleasing by week 4)
 
-![outline](outline_todo.png)
+![outline](/Resources/outline_todo.png)
 
 The purpose of this app is to price check a Pokemon TCG card where the user searches via a video, scan or static image of the card they wish to know about. The first form of implementation that will be attempted will be for a user to submit a static image of the card. Then through machine learning & computer vision, a packet of information consisting at minimum of the collector number will be sent to a module that will perform the query in a regularly updatable database.
 
 Below is an example card with collector number located in bottom left corner for this particular set.
 
-![cramorant](/train/cramorant.png)
+![cramorant](/Machine_Learning/train/cramorant.png)
 
 The database shall have its entries pulled from the Pokemon TCG API. This API contains information on prices from [TCGPlayer.com](https://www.tcgplayer.com/). The data will be transformed & optimized to consist of information needed for our visualization. As an initial proof of concept, the initial data will be pulled from the Pokemon TCG API however room for expansion on this would be to obtain prices from other vendors.
 
