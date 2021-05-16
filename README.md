@@ -3,7 +3,7 @@
 ## Overview of the project
 
 ## Resources 
-- Data :
+- Data : [datasource](https://pokemontcg.io/)
 - Software :
 - Trello https://trello.com/b/3LoHN9J1/final-project-squirtlesquad
 - Liste of tasks: [liste](https://docs.google.com/spreadsheets/d/133HnyivTdR334dvsgrOn8IoTsdS8Uze6dNppac0ljDY/edit#gid=0)
