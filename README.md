@@ -58,4 +58,3 @@ Languages, Libraries, Software Used for this project are listed by tasks.
 Under consideration -
 
 * HTML
-
