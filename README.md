@@ -27,7 +27,7 @@ Due to the nature & scope of the project, roles will be similar but not identica
 | Team Member    | Week 1 Role  | Week 2 Role | Week 3 Role | Week 4 Role |
 |----------------|--------------|-------------|-------------|-------------|
 | Aryana Akhavan | ○       |             |             |             |
-| Asmae Benazizi | ◻       |             |             |             |
+| Asmae Benazizi | ⬜       |             |             |             |
 | Ian Fan        | X / △ |             |             |             |
 | Kun Zhao       | ○       |             |             |             |
 | Lydia Zhang    | X / ○    |             |             |             |
