@@ -18,11 +18,11 @@ Below is an example card with collector number located in bottom left corner for
 
 The database shall have its entries pulled from the Pokemon TCG API. This API contains information on prices from [TCGPlayer.com](https://www.tcgplayer.com/). The data will be transformed & optimized to consist of information needed for our visualization. As an initial proof of concept, the initial data will be pulled from the Pokemon TCG API however room for expansion on this would be to obtain prices from other vendors.
 
-The final visualization is anticipated as an HTML page that would consist of prices & image of the card. 
+The final visualization is anticipated as an HTML page that would consist of prices & image of the card.
 
 ## Team Members & Project Map
 
-Due to the nature & scope of the project, roles will be similar but not identical week to week with some roles being responsibilities of multiple team members. 
+Due to the nature & scope of the project, roles will be similar but not identical week to week with some roles being responsibilities of multiple team members.
 
 | Team Member    | Week 1 Role  | Week 2 Role | Week 3 Role | Week 4 Role |
 |----------------|--------------|-------------|-------------|-------------|
