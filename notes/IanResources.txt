@@ -1,0 +1,17 @@
+https://nanonets.com/blog/ocr-with-tesseract/
+
+https://www.pyimagesearch.com/2017/07/17/credit-card-ocr-with-opencv-and-python/
+
+https://www.coursera.org/projects/ocr-text-detection-tensorflow-opencv-tesseract?action=enroll
+
+Set up a new Real Time Text Detection script
+
+Collect and Label Images for recognition of Region of Interest (ROI)
+
+Train Tensorflow to recognize Region of Interest (ROI)
+
+Capture webcam video stream, frames from a video file, or a static image
+
+Extract and enhance relevant image segments with OpenCV
+
+Use Tesseract to extract, export text data for use
