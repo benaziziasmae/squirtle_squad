@@ -1,117 +1,294 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>"UFO Finder"</title>
-
-    <!--link to BootStrap-->  
-    <link
-        rel="stylesheet"
-        href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-        crossorigin="anonymous"
-        />
-       <!--link to external CSS file-->
-       <link rel="stylesheet" href="static/css/style.css">
-
+<html data-theme="light"><head>
+    <title>
+          Yamper | Battle Styles | Pokémon TCG Guru
+        </title>
+    <meta name="csrf-param" content="authenticity_token">
+    <meta name="csrf-token" content="JC09pCBphKV0+7WnOO1hGjjRcSUbJGnXZ/HQbtd7JnhG/rmqNd0f19HdCioazRQJ/2ORiSABJczCnkAZJrlK+A==">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Yamper from Sword &amp; Shield - Battle Styles, released on 2021/03/19.">
+    <meta name="keywords" content="Pokémon, Yamper, Battle Styles, Sword &amp; Shield, Basic, pokemon, trading, card, cards, evolution, api, developers, trading card game, trading cards, collectible card game, tcg, game, multiplayer, hobby">
+    <meta property="og:title" content="Yamper | Battle Styles | Pokémon TCG Guru">
+    <meta property="og:description" content="Yamper from Sword &amp; Shield - Battle Styles, released on 2021/03/19.">
+    <meta property="og:image" content="https://images.pokemontcg.io/swsh5/52.png">
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/favicon-e041845ed2cf620a1fa9eca3601f0005260914d65b86485b4949c686b852af73.ico">
+    <script>
+          const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+          const currentTheme = localStorage.getItem("theme");
+    
+          let theme;
+          if (currentTheme == "dark") {
+            theme = "dark";
+          }
+          else if (currentTheme == "light") {
+            theme = "light";
+          }
+          else if (prefersDarkScheme.matches) {
+            theme = "dark";
+          }
+          else {
+            theme = "light";
+          }
+    
+          document.documentElement.setAttribute("data-theme", theme);
+        </script>
+    <link rel="stylesheet" media="all" href="/assets/application-7398a955e8a43c33b7452cb2cd1741ee531932387c54c3bf1238de82cf556eb5.css" data-turbolinks-track="reload">
+    <script src="/packs/js/application-7d0a0ad95787d1be0ad3.js" data-turbolinks-track="reload"></script>
+    <script async="" defer="" data-domain="pokemontcg.guru" src="https://plausible.io/js/plausible.js"></script>
     </head>
-    <body class="bg-dark">
-    
-        <div class="wrapper">
-          <!-- Navigation Bar -->
-            <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
-               <a class="navbar-brand" href="index.html">UFO Sightings</a>
-               <a href="index.html"><img src="static/images/ufo_image.png" alt="ufo_image_nav" width="45" height="auto"></a>
-            </nav>
-        </div>
-
-    <!--Webpage Header-->
-    <div class="jumbotron">
-        <h1 class="display-4">The Truth is Out There</h1>
-    </div>
-
-    <!--Article Title and Paragraph-->
-    <div class="container-fluid">
-        <div class="row">
-          <div class="col-md-4">
-            <h3>UFO Sightings: Fact of Fancy? <small>Ufologists Weigh In</small></h3>
-          </div>
-          <div class="col-md-8">
-            <p>
-              Are we alone in the universe? For millennia, humans have turned to the sky to answer this question. Now, thanks to research generously funded by W. Avy, a UFO-enthusiast and amateur ufologist, we can supplement our sky-searching with data analysis.<br><br>"The release of this analysis is well-timed: It coincides with the celebration of World UFO Day, which is a moment for ufologists around the world to connect, relax, and sample a range of UFO-themed snacks," said Dr. Ursula F. Olivier, the world's preeminent expert on circular sightings. "Citizen-scientists can be especially helpful in both cataloguing sightings—which is hugely helpful for us in our search for aliens—and in helping us celebrate the work that has already been done, such as this data visualization project, which will help us raise awareness of the ubiquity of sightings!"<br><br>Not everyone is ready to celebrate, however. Local CEO and vocal anti-alien activist V. Isualize reached out to our reporters to go on record as firmly opposed to any attempts to provide access to this data. "If there are aliens, they certainly would like to be left alone," she stated, before directing us to the Leave Aliens Alone (LAA) community engagement initiative she founded and funds.<br><br>So what do YOU think? Are we alone in the universe? Are aliens trying to contact us, or do they want to be left alone? Dig through the data yourself, and let us know what you see.
-
-        
-            </p>
-        </div>
-      </div>
-    </div>
-
- <!-- Filter | Table -->
- <div class="container-fluid">
-    <div class="row">
-        <!-- Filter -->
-        <div class="col-md-3">
-            <form class="bg-dark" action="">
-                <p>Filter Search</p>
-                <ul class="list-group bg-dark">
-                    <!-- Input -->
-                    <li class="list-group-item bg-dark">
-                        <label for="date">Enter Date </label>
-                        <input type="text" class="form-control" placeholder="1/10/2010" id="datetime">
-                    </li>
-                    <!-- City -->
-                    <li class="list-group-item bg-dark">
-                        <label for="date">Enter a City</label>
-                        <input type="text" class="form-control" placeholder="benton" id="city">
-                    </li>
-                    <!-- State -->
-                    <li class="list-group-item bg-dark">
-                        <label for="date">Enter a State</label>
-                        <input type="text" class="form-control" placeholder="ar" id="state">
-                    </li>
-                    <!-- Country -->
-                    <li class="list-group-item bg-dark">
-                        <label for="date">Enter a Country</label>
-                        <input type="text" class="form-control" placeholder="us" id="country">
-                    </li>
-                    <!-- Shape -->
-                    <li class="list-group-item bg-dark">
-                        <label for="date">Enter a Shape</label>
-                        <input type="text" class="form-control" placeholder="circle" id="shape">
-                    </li>
-                    <!-- Button -->
-                      
-                        </ul>
-                    </form>
-              </div>
-    
-    
-              <!--Dynamic Table-->
-              <div class="col-md-9">
-                    <table class="table table-striped">
-                    <thead>
-                            <tr>
-                                <th>Date</th>
-                                <th>City</th>
-                                <th>State</th>
-                                <th>Country</th>
-                                <th>Shape</th>
-                                <th>Duration</th>
-                                <th>Comments</th>
-                            </tr>
-                    </thead>
-                    <tbody></tbody>
-                    </table>
-              </div>
-            
+    <body>
+        <nav class="navbar is-white" data-controller="navbar">
+            <div class="container">
+                <div class="navbar-brand">
+                    <a class="navbar-item brand-text" href="/">
+                        <img src="/assets/oranguru-0544bd72aa3108d4497d9b0015f81f01927e79bc88c94bde8d385e842f619a33.png"> Pokémon TCG Guru
+                    </a> 
+                <div class="navbar-burger burger" data-target="navbar.burger" data-action="click->navbar#toggleMenu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </div>
-          
-          <!--JS Script with D3 Library-->
-          </div>
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script>
-          <script src="static/JavaScript/data.js"></script>
-          <script src="static/JavaScript/app.js"></script>
-    </body>
-    </html>
+    <div id="navMenu" class="navbar-menu" data-target="navbar.menu">
+        <div class="navbar-start">
+            <form class="is-flex" data-controller="search" data-target="search.searchInput" data-action="submit->search#search" action="/search" accept-charset="UTF-8" method="get">
+                <div class="field" style="margin-top: auto; margin-bottom: auto; flex: 1">
+                    <p class="control has-icons-left">
+                        <input type="search" name="q" id="search-input" class="input" placeholder="Search for a card">
+                            <span class="icon is-small is-left">
+                                <i class="fas fa-search"></i>
+                            </span>
+                        </p>
+                    </div>
+                     <input type="hidden" name="view" id="view">
+                 </form>
+            </div>
+    <div class="navbar-end">
+        <a class="navbar-item" href="/advanced">Advanced</a>
+        <a class="navbar-item" href="/syntax">Syntax</a>
+        <a class="navbar-item" href="/sets">Sets</a>
+        <a class="navbar-item" href="/donate">Donate</a>
+        <span class="navbar-item is-clickable" data-action="click->navbar#toggleTheme"><i class="fas theme-icon fa-sun" data-target="navbar.themeIcon"></i></span>
+    </div>
+    </div>
+    </div>
+    </nav>
+    <div id="wrapper">
+    <div class="container">
+    <div id="card-details" class="columns">
+    <div class="column is-one-third">
+    <img class="card-image" src="https://images.pokemontcg.io/swsh5/52_hires.png">
+     </div>
+    <div class="column is-6 is-offset-1">
+    <div class="content card-details">
+    <nav class="card-details_head level">
+    <div class="level-left">
+    <div class="level-item">
+    <span class="title is-3">
+    Yamper
+    <div class="title is-5 has-text-muted">
+    Pokémon - Basic
+    </div>
+    </span>
+    </div>
+    </div>
+    <div class="level-right">
+    <div class="level-item">
+    <span class="title is-5 is-flex is-align-items-center">
+    <span class="mr-2">HP 60</span>
+    <img class="energy" src="/assets/lightning-732a70ef2e2dab4cc564fbf4d85cad48b0ac9ece462be3d42166a6fea4085773.png">
+    </span>
+    </div>
+    </div>
+    </nav>
+    <hr>
+    <section class="pt-0 mb-4">
+    <div class="title is-4 has-text-muted is-flex is-align-items-center mb-1">
+    Prices
+    </div>
+    <div class="title is-6 has-text-muted is-flex is-align-items-center mb-1">
+    <a target="_blank" href="https://prices.pokemontcg.io/tcgplayer/swsh5-52">Buy Now From TCGplayer</a>
+    </div>
+    <div class="is-size-7 has-text-muted">Last Updated 2021/05/17</div>
+    <section>
+    <div class="columns is-mobile">
+    <div class="column">
+    <div class="card-details_price">
+    <p class="heading">normal market</p>
+    <p class="title is-size-6-mobile is-5 price-high has-text-primary">$0.06</p>
+    </div>
+    </div>
+    <div class="column">
+    <div class="card-details_price">
+    <p class="heading">normal low</p>
+    <p class="title is-size-6-mobile is-5 price-low has-text-success">$0.01</p>
+    </div>
+    </div>
+    <div class="column">
+    <div class="card-details_price">
+    <p class="heading">normal mid</p>
+    <p class="title is-size-6-mobile is-5 price-mid has-text-info">$0.13</p>
+    </div>
+    </div>
+    <div class="column">
+    <div class="card-details_price">
+    <p class="heading">normal high</p>
+    <p class="title is-size-6-mobile is-5 price-high has-text-danger">$1.00</p>
+    </div>
+    </div>
+    </div>
+    </section>
+    <section>
+    <div class="columns is-mobile">
+    <div class="column">
+    <div class="card-details_price">
+    <p class="heading">reverse holofoil market</p>
+    <p class="title is-size-6-mobile is-5 price-high has-text-primary">$0.21</p>
+    </div>
+    </div>
+    <div class="column">
+    <div class="card-details_price">
+    <p class="heading">reverse holofoil low</p>
+    <p class="title is-size-6-mobile is-5 price-low has-text-success">$0.04</p>
+    </div>
+    </div>
+    <div class="column">
+    <div class="card-details_price">
+    <p class="heading">reverse holofoil mid</p>
+    <p class="title is-size-6-mobile is-5 price-mid has-text-info">$0.27</p>
+    </div>
+    </div>
+    <div class="column">
+    <div class="card-details_price">
+    <p class="heading">reverse holofoil high</p>
+    <p class="title is-size-6-mobile is-5 price-high has-text-danger">$1.25</p>
+    </div>
+    </div>
+    </div>
+    </section>
+    </section>
+    <hr class="mb-0">
+    <section>
+    <p class="heading">Abilities</p>
+    <div class="card-details_ability">
+    <div class="title is-4 has-text-muted is-flex is-align-items-center mb-1">
+    <img class="ability-type" src="/assets/ability-3a07d6b5dd74f26907cdb84381784e2a81e24e33442be9de262a1f29a1dfa785.png">
+    <span>Ball Search</span>
+    </div>
+    <p>
+    When you play this Pokémon from your hand onto your Bench during your turn, you may put a Poké Ball card, a Great Ball card, or 1 of each from your discard pile into your hand.
+    </p>
+    </div>
+    </section>
+    <section>
+    <p class="heading">Attacks</p>
+    <table>
+    <tbody class="card-details_attack">
+    <tr>
+    <td class="nowrap">
+    <img class="energy" src="/assets/colorless-fd5125f53e603b89cdfc6984ab4cea8e3ed43323a8d84bee6a774db1ea8c3dae.png">
+    <img class="energy" src="/assets/colorless-fd5125f53e603b89cdfc6984ab4cea8e3ed43323a8d84bee6a774db1ea8c3dae.png">
+    </td>
+    <td class="attack-name">
+    <span class="title is-4">Flop</span>
+    </td>
+    <td>
+    <span class="title is-4 is-muted nowrap">20</span>
+    </td>
+    </tr>
+    </tbody><tbody>
+    </tbody></table>
+    </section>
+    <section>
+    <div class="columns is-flex-wrap-wrap is-mobile">
+    <div class="column is-one-third-desktop is-one-third-tablet is-half-mobile">
+    <div class="card-details_weakness">
+    <p class="heading">weakness</p>
+    <p class="title is-5 is-flex is-align-items-center">
+    <img class="energy" src="/assets/fighting-5fcb6e1f157032efac4f6830d88759e83e66530354a297b112fff24c152e8d3c.png">
+    <span class="ml-1">×2</span>
+    </p>
+    </div>
+    </div>
+    <div class="column is-one-third-desktop is-one-third-tablet is-half-mobile">
+    <div class="card-details_resistance">
+    <p class="heading">resistance</p>
+    <p class="title is-5">N/A</p>
+    </div>
+    </div>
+    <div class="column is-one-third-desktop is-one-third-tablet is-half-mobile">
+    <div class="card-details_retreat">
+    <p class="heading">retreat cost</p>
+    <img class="energy" src="/assets/colorless-fd5125f53e603b89cdfc6984ab4cea8e3ed43323a8d84bee6a774db1ea8c3dae.png">
+    </div>
+    </div>
+    <div class="column is-one-third-desktop is-one-third-tablet is-half-mobile">
+    <div class="card-details_artist">
+    <p class="heading">artist</p>
+    <p class="title is-5">sui</p>
+    </div>
+    </div>
+    <div class="column is-one-third-desktop is-one-third-tablet is-half-mobile">
+    <div class="card-details_rarity">
+    <p class="heading">rarity</p>
+    <p class="title is-5">Common</p>
+    </div>
+    </div>
+    <div class="column is-one-third-desktop is-one-third-tablet is-half-mobile">
+    <div class="card-details_set">
+    <p class="heading">set</p>
+    <p class="title is-5">
+    <a class="is-flex is-align-items-center" href="/set/battle-styles/swsh5">
+    Battle Styles <img width="24" class="ml-2" src="https://images.pokemontcg.io/swsh5/symbol.png">
+    </a> </p>
+    </div>
+    </div>
+    <div class="column is-one-third-desktop is-one-third-tablet is-half-mobile">
+    <div class="card-details_number">
+    <p class="heading">number</p>
+    <p class="title is-5">52 / 163</p>
+    </div>
+    </div>
+    </div>
+    </section>
+    <section>
+    <div class="is-italic">This gluttonous Pokémon only assists people with their work because it wants treats. As it runs, it crackles with electricity.</div>
+    </section>
+    <section>
+    <div class="field is-grouped is-grouped-multiline">
+    <div class="control">
+    <div class="tags has-addons">
+    <span class="tag is-dark">Standard</span>
+    <span class="tag is-success">Legal</span>
+    </div>
+    </div>
+    <div class="control">
+    <div class="tags has-addons">
+    <span class="tag is-dark">Expanded</span>
+    <span class="tag is-success">Legal</span>
+    </div>
+    </div>
+    <div class="control">
+    <div class="tags has-addons">
+    <span class="tag is-dark">Unlimited</span>
+    <span class="tag is-success">Legal</span>
+    </div>
+    </div>
+    </div>
+    </section>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    <footer class="footer">
+    <div class="content has-text-centered">
+    <p><strong>Pokémon TCG Guru</strong> by <a href="https://andrewbackes.com">Andrew Backes</a></p>
+    <p>All data made available by the <a href="https://pokemontcg.io" target="_blank">Pokémon TCG API</a></p>
+    <p>
+    This website is not produced, endorsed, supported, or affiliated with Nintendo or The Pokémon Company.
+    </p>
+    </div>
+    </footer>
+    
+    
+    </body></html>
