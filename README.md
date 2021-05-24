@@ -15,7 +15,7 @@ The purpose of this app is to price check a Pokemon TCG card where the user sear
 
 Below is an example card with collector number located in bottom left corner for this particular set.
 
-![cramorant](/Machine_Learning/train/cramorant.png)
+![cramorant](/Resources/cramorant.png)
 
 The database shall have its entries pulled from the Pokemon TCG API. This API contains information on prices from [TCGPlayer.com](https://www.tcgplayer.com/). The data will be transformed & optimized to consist of information needed for our visualization. As an initial proof of concept, the initial data will be pulled from the Pokemon TCG API however room for expansion on this would be to obtain prices from other vendors.
 
