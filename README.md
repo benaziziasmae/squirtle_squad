@@ -37,6 +37,8 @@ Due to the nature & scope of the project, roles will be similar but not identica
 
 Team members communicated through Slack & voice communications supported by Microsoft Teams & Google Hangouts.
 
+Team members are meeting at least once a week.
+
 Current tasks, scratchpad & brainstorm ideas are on Google sheets ([GOOGLE SHEET LINK](https://docs.google.com/spreadsheets/d/133HnyivTdR334dvsgrOn8IoTsdS8Uze6dNppac0ljDY/edit#gid=0)) & [Trello](https://trello.com/b/3LoHN9J1/final-project-squirtlesquad). A Gantt chart is within the realm of possibility to be added.
 
 ## Resources
@@ -61,26 +63,3 @@ Languages, Libraries, Software Used for this project are listed by tasks.
 Under consideration -
 
 * HTML
-=======
-# squirtle_squad
-## Overview Project 
-
-## Resources 
-
-- Data
-- Software 
-- Communication Tools
-
-## Team's way of communication 
-
-- Throughout the project the team made constant communication vis slack app sahring idea snd braintstorming, information and outputs 
-- Maintaining the Rythm of at leats one meeting once a week 
-
-
-Team members:
-
-- Asmae benazizi
-- Ian Fan
-- Lydia Zhang
-- Aryana Akhavan
-- Kun Zhao
