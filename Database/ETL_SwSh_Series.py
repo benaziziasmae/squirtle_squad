@@ -1,11 +1,9 @@
 # import dependencies
 import pandas as pd
 import requests
-import csv
-import json
 import datetime
-import psycopg2
 import sys
+import os
 sys.path.append(".")
 from config import tcgapikey, pgpassword
 from sqlalchemy import create_engine, dialects
@@ -15,9 +13,6 @@ from re import search
 url = 'https://api.pokemontcg.io/v2/cards?q=set.series:Sword%20&%20Shield&page=1'
 data = requests.get(url, headers={'X-Api-Key':tcgapikey}).json()
 
-# ERROR TO FIX:     "Can't connect to HTTPS URL because the SSL module is not available."
-
-'''
 # loop to get all pages of query
 query_results = True
 i = 2
@@ -103,6 +98,8 @@ data_clean_df.to_sql(
     'prices':dialects.postgresql.JSON}
     )
 
-# export as csv for local test
-data_clean_df.to_csv(f'SwShSeries_{datetime.date.today()}.csv', index = False)
-'''
+print('PGAdmin Updated')
+
+data_clean_df.to_csv(f'{os.path.dirname(__file__)}\SwShSeries_{datetime.date.today()}.csv', index = False)
+
+print(f'CSV created @ {os.path.dirname(__file__)}')
