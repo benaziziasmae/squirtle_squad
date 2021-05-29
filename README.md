@@ -67,3 +67,4 @@ Tools used: Flask / HTML
 #### Project dashboard 
 
 -- Using HTML, we created a website for the end user to look at. on this HTML page you can see the pokemon cards of you choice by making a search in the toolbar as well as the prices of the pokemon cards, the tolls that has been used is flask.
+
