@@ -14,6 +14,11 @@ The base information provided are:
 - Images
 - prices
 
+
+## Main question/ issue we want to tackle
+
+OUr main goal is to create an application that accepts user inputted images and then provide an interface to show the user market prices and the card's legalities in the Pokemon Trading Card Game's playing formats.
+
 ## Team Members & Project Map
 
 Due to the nature & scope of the project, roles will be similar but not identical week to week with some roles being responsibilities of multiple team members.
@@ -26,6 +31,8 @@ Due to the nature & scope of the project, roles will be similar but not identica
 | Kun Zhao       | ○       |     ○      |             |             |
 | Lydia Zhang    | X / ○    |    ○       |             |             |
 
+
+ 
 
 ## Topic Rationale
 
