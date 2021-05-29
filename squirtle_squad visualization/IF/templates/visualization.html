@@ -10,7 +10,7 @@
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
     crossorigin="anonymous">
     <!--our style sheet-->
-    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="../static/css/style.css">
     
 
 </head>
@@ -24,7 +24,7 @@
     <div class = 'container'>
         <!--image of card-->
         <div class = 'row'>
-            <img src='' alt="Searching For Card" style='max-width: 100%; height:auto' id ="card_image">
+            <img src='' alt="Searching For Card" style='max-width: 100%; height:auto' id ="card_image" class='img-responsive'>
         </div>
         <br>
     
@@ -36,7 +36,7 @@
         <br>
         
         <!--tables-->
-        <div class = "row">
+        <div class = "table-responsive">
             <table class="table" id ="priceTable">
                 <!--table's header row-->
                 <thead id = "tableHead">
@@ -48,7 +48,7 @@
         </div>
         <br>
 
-        <div class = "row">
+        <div class = "table-responsive">
             <table class="table" id ="LegalityTable">
                 <!--table's header row-->
                 <thead id = "LegalityHead">
@@ -69,7 +69,7 @@
 
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script>
-    <script src='static/javascript/data.js'></script>
-    <script src='static/javascript/app.js'></script>
+    <script src='../static/javascript/data.js'></script>
+    <script src='../static/javascript/app.js'></script>
 </body>
 </html>
