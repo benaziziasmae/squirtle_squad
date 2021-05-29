@@ -1,15 +1,36 @@
 
 # Pokemon OCR & Price Comparator
 
-## Overview
+## Project Overview
 
-This repository hosts source code & background information for a Pokemon TCG card scanner & price checker. This Readme will be updated periodically through out the project's progress.
+This repository hosts source code & background information for a Pokemon TCG card scanner & price checker. This Readme will exclusively dedicated to Deliverable 2/Visualization.
+
+In this Deliverable Our team is working on analysing the Pokemon Data gathered from [Pokemon TCG API](https://pokemontcg.io/) and contained the record of plenty of pokemon exposing cards and set details in an easy to consume format.
+
+The base information provided are:
+- Pokemon Name
+- Release date 
+- Legality 
+- Images
+- prices
+
+## Team Members & Project Map
+
+Due to the nature & scope of the project, roles will be similar but not identical week to week with some roles being responsibilities of multiple team members.
+
+| Team Member    | Week 1 Role  | Week 2 Role | Week 3 Role | Week 4 Role |
+|----------------|--------------|-------------|-------------|-------------|
+| Aryana Akhavan | ○       |      X / △       |             |             |
+| Asmae Benazizi | ⬜       |    X / △      |             |             |
+| Ian Fan        | X / △ |        △/X     |             |             |
+| Kun Zhao       | ○       |      ⬜       |             |             |
+| Lydia Zhang    | X / ○    |     ⬜       |             |             |
+
 
 ## Topic Rationale
 
 We decided on this topic for something light-hearted that demonstrates the mastery of data visualization, data base administration & management, & machine learning. For all intents & purposes, the project shall hence forth be referred to as an 'app'. A flow chart representing the processes of the app is shown below (flow chart will be regularly updated & made aesthetically pleasing by week 4)
 
-![outline](/Resources/outline_todo.png)
 
 The purpose of this app is to price check a Pokemon TCG card where the user searches via a video, scan or static image of the card they wish to know about. The first form of implementation that will be attempted will be for a user to submit a static image of the card. Then through machine learning & computer vision, a packet of information consisting at minimum of the collector number will be sent to a module that will perform the query in a regularly updatable database.
 
@@ -21,17 +42,7 @@ The database shall have its entries pulled from the Pokemon TCG API. This API co
 
 The final visualization is anticipated as an HTML page that would consist of prices & image of the card.
 
-## Team Members & Project Map
 
-Due to the nature & scope of the project, roles will be similar but not identical week to week with some roles being responsibilities of multiple team members.
-
-| Team Member    | Week 1 Role  | Week 2 Role | Week 3 Role | Week 4 Role |
-|----------------|--------------|-------------|-------------|-------------|
-| Aryana Akhavan | ○       |             |             |             |
-| Asmae Benazizi | ⬜       |             |             |             |
-| Ian Fan        | X / △ |             |             |             |
-| Kun Zhao       | ○       |             |             |             |
-| Lydia Zhang    | X / ○    |             |             |             |
 
 ## Team communication Protocol
 
