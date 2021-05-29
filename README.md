@@ -17,26 +17,22 @@ The base information provided are:
 
 ## Main question/ issue we want to tackle
 
-OUr main goal is to create an application that accepts user inputted images and then provide an interface to show the user market prices and the card's legalities in the Pokemon Trading Card Game's playing formats.
+Our main goal is to create an application that accepts user inputted images and then provide an interface to show the user market prices and the card's legalities in the Pokemon Trading Card Game's playing formats. tha's mean 
 
-## Team Members & Project Map
+## Team Members & Project Map for this week
 
-Due to the nature & scope of the project, roles will be similar but not identical week to week with some roles being responsibilities of multiple team members.
+This week duties has been divided the following way.
 
 | Team Member    | Week 1 Role  | Week 2 Role | Week 3 Role | Week 4 Role |
 |----------------|--------------|-------------|-------------|-------------|
 | Aryana Akhavan | ○       |      X / △       |             |             |
 | Asmae Benazizi | ⬜       |    X / △      |             |             |
 | Ian Fan        | X / △ |        △/X     |             |             |
-| Kun Zhao       | ○       |     ○      |             |             |
-| Lydia Zhang    | X / ○    |    ○       |             |             |
+| Kun Zhao       | ○       |     ○ /⬜     |             |             |
+| Lydia Zhang    | X / ○    |    ○ /⬜      |             |             |
 
 
  
-
-## Topic Rationale
-
-We decided on this topic for something light-hearted that demonstrates the mastery of data visualization, data base administration & management, & machine learning. For all intents & purposes, the project shall hence forth be referred to as an 'app'. A flow chart representing the processes of the app is shown below (flow chart will be regularly updated & made aesthetically pleasing by week 4)
 
 
 The purpose of this app is to price check a Pokemon TCG card where the user searches via a video, scan or static image of the card they wish to know about. The first form of implementation that will be attempted will be for a user to submit a static image of the card. Then through machine learning & computer vision, a packet of information consisting at minimum of the collector number will be sent to a module that will perform the query in a regularly updatable database.
