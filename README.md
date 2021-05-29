@@ -1,65 +1,50 @@
 
-# Pokemon OCR & Price Comparator
+# Visualisation : Pokemon OCR & Price Comparator
 
-## Overview
+## Deliverable 2
 
-This repository hosts source code & background information for a Pokemon TCG card scanner & price checker. This Readme will be updated periodically through out the project's progress.
+This repository hosts source code & background information for a Pokemon TCG card scanner & price checker. This Readme will exclusively dedicated to Deliverable 2/Visualization.
 
-## Topic Rationale
+## Main problematic to resolve
 
-We decided on this topic for something light-hearted that demonstrates the mastery of data visualization, data base administration & management, & machine learning. For all intents & purposes, the project shall hence forth be referred to as an 'app'. A flow chart representing the processes of the app is shown below (flow chart will be regularly updated & made aesthetically pleasing by week 4)
+Our main goal is to create an application that accepts user inputted images and then provide an interface to show the user market prices and the card's legalities in the Pokemon Trading Card Game's playing formats. tha's mean 
 
-![outline](/Resources/outline_todo.png)
+In this Deliverable Our team is working on analysing the Pokemon Data gathered from [Pokemon TCG API](https://pokemontcg.io/) and contained the record of plenty of pokemon exposing cards and set details in an easy to consume format.
 
-The purpose of this app is to price check a Pokemon TCG card where the user searches via a video, scan or static image of the card they wish to know about. The first form of implementation that will be attempted will be for a user to submit a static image of the card. Then through machine learning & computer vision, a packet of information consisting at minimum of the collector number will be sent to a module that will perform the query in a regularly updatable database.
+The base information provided are:
+- Pokemon Name
+- Release date 
+- Legality 
+- Images
+- prices
 
-Below is an example card with collector number located in bottom left corner for this particular set.
 
-![cramorant](/Resources/cramorant.png)
+## Project Map for this week
 
-The database shall have its entries pulled from the Pokemon TCG API. This API contains information on prices from [TCGPlayer.com](https://www.tcgplayer.com/). The data will be transformed & optimized to consist of information needed for our visualization. As an initial proof of concept, the initial data will be pulled from the Pokemon TCG API however room for expansion on this would be to obtain prices from other vendors.
-
-The final visualization is anticipated as an HTML page that would consist of prices & image of the card.
-
-## Team Members & Project Map
-
-Due to the nature & scope of the project, roles will be similar but not identical week to week with some roles being responsibilities of multiple team members.
+This week duties has been divided the following way.
 
 | Team Member    | Week 1 Role  | Week 2 Role | Week 3 Role | Week 4 Role |
 |----------------|--------------|-------------|-------------|-------------|
-| Aryana Akhavan | ○       |             |             |             |
-| Asmae Benazizi | ⬜       |             |             |             |
-| Ian Fan        | X / △ |             |             |             |
-| Kun Zhao       | ○       |             |             |             |
-| Lydia Zhang    | X / ○    |             |             |             |
+| Aryana Akhavan | ○       |      X / △       |             |             |
+| Asmae Benazizi | ⬜       |    X / △      |             |             |
+| Ian Fan        | X / △ |        △/X     |             |             |
+| Kun Zhao       | ○       |     ○ /⬜     |             |             |
+| Lydia Zhang    | X / ○    |    ○ /⬜      |             |             |
 
-## Team communication Protocol
+## Data Transformation 
 
-Team members communicated through Slack & voice communications supported by Microsoft Teams & Google Hangouts.
+Using Python, The database that have been pulled from the Pokemon TCG API was firstly examinated to identify the variables that we want to work with, then cleaned to keep only  the meaningful variables.
+After, we load the data Set into a .csv file
 
-Team members are meeting at least once a week.
+## Visualization of the pokemon cards 
 
-Current tasks, scratchpad & brainstorm ideas are on Google sheets ([GOOGLE SHEET LINK](https://docs.google.com/spreadsheets/d/133HnyivTdR334dvsgrOn8IoTsdS8Uze6dNppac0ljDY/edit#gid=0)) & [Trello](https://trello.com/b/3LoHN9J1/final-project-squirtlesquad). A Gantt chart is within the realm of possibility to be added.
+The final visualization is anticipated as an HTML page that would consist of prices & image of the card.
 
-## Resources
 
-Languages, Libraries, Software Used for this project are listed by tasks.
 
-### Machine Learning Model
 
-* Optical Character Recognition
-* Tesseract
-* OpenCV
+## Machine learning 
 
-### Database
+Team members submit the code for the machine learning model. It's a work in progress and we are still deciding on what model is best to use.
+see also the [main branch](https://github.com/benaziziasmae/squirtle_squad)
 
-* PostGRES
-* SQL
-* Python ETL
-* [Pokemon TCG API](https://pokemontcg.io/)
-
-### Visualization
-
-Under consideration -
-
-* HTML
