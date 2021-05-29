@@ -41,7 +41,9 @@ After, we load the data Set into a .csv file
 The final visualization is anticipated as an HTML page that would consist of prices & image of the card.
 
 
-## Mchine learning 
+
+
+## Machine learning 
 
 Team members submit the code for the machine learning model. It's a work in progress and we are still deciding on what model is best to use.
 see also the [main branch](https://github.com/benaziziasmae/squirtle_squad)
