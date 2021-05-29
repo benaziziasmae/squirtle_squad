@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QueryResult</title>
+    <link rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous">
+    <!--our style sheet-->
+    <link rel="stylesheet" href="static/css/style.css">
+    
+
+</head>
+
+<body class = 'bg-dark' >
+    <!--Webpage Header-->
+    <div class="jumbotron" style = 'color: black'>
+        <h1 class="display-6">squirtle_squad project: Pokemon TCG Reader & Market Price Checker</h1>
+    </div>
+    <!--main body-->
+    <div class = 'container'>
+        <!--image of card-->
+        <div class = 'row'>
+            <img src='' alt="Searching For Card" style='max-width: 100%; height:auto' id ="card_image">
+        </div>
+        <br>
+    
+        <!--card type (normal, holo, reversefoil)-->
+        <div class = "row">
+            <select name='cardtype' id ='cardtype'>
+            </select>
+        </div>
+        <br>
+        
+        <!--tables-->
+        <div class = "row">
+            <table class="table" id ="priceTable">
+                <!--table's header row-->
+                <thead id = "tableHead">
+                </thead>
+                <!--table's body rows-->
+                <tbody id = "tableBody">
+                </tbody>
+            </table>
+        </div>
+        <br>
+
+        <div class = "row">
+            <table class="table" id ="LegalityTable">
+                <!--table's header row-->
+                <thead id = "LegalityHead">
+                </thead>
+                <!--table's body rows-->
+                <tbody id = "LegalityBody">
+                </tbody>
+            </table>
+        </div>
+        <br>
+
+        <!--button to go back to 'home'-->
+        <!--TODO: replace with Flask's app.route('/')-->
+        <div class = "row">
+            <button onclick="window.location.href='\.\.\/IF\/home.html'">Submit Another Scan</button>
+        </div>
+        <br>
+
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script>
+    <script src='static/javascript/data.js'></script>
+    <script src='static/javascript/app.js'></script>
+</body>
+</html>

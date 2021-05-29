@@ -38,7 +38,7 @@ for i in range(len(data['data'])):
     except KeyError:
         data['data'][i]['prices'] = None
     
-# set info
+ # set info
     #set_id
     try:    
         data['data'][i]['set_id']=data['data'][i]['set']['id']
@@ -54,11 +54,15 @@ for i in range(len(data['data'])):
     #add timestamp
     data['data'][i]['date']= datetime.datetime.now()
 
-# collector data
+ # collector data
     if search ('\D', data['data'][i]['number']):
         data['data'][i]['number'] = data['data'][i]['number']
     else:
         data['data'][i]['number'] = str(data['data'][i]['number']).zfill(3) + "/" + str(data['data'][i]['set']['printedTotal']).zfill(3)
+
+ #remove direct market
+    for types in data['data'][i]['prices']:
+        del data['data'][i]['prices'][types]['directLow']
 
 # create data frame & drop unneeded information
 data_clean_df = pd.DataFrame(data['data']).drop(
