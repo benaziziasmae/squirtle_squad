@@ -1,4 +1,3 @@
-
 # Pokemon OCR & Price Comparator
 
 ## Overview
@@ -25,13 +24,13 @@ The final visualization is anticipated as an HTML page that would consist of pri
 
 Due to the nature & scope of the project, roles will be similar but not identical week to week with some roles being responsibilities of multiple team members.
 
-| Team Member    | Week 1 Role  | Week 2 Role | Week 3 Role | Week 4 Role |
-|----------------|--------------|-------------|-------------|-------------|
-| Aryana Akhavan | ○       |             |             |             |
-| Asmae Benazizi | ⬜       |             |             |             |
-| Ian Fan        | X / △ |             |             |             |
-| Kun Zhao       | ○       |             |             |             |
-| Lydia Zhang    | X / ○    |             |             |             |
+| Team Member    | Week 1 Role | Week 2 Role | Week 3 Role | Week 4 Role |
+| -------------- | ----------- | ----------- | ----------- | ----------- |
+| Aryana Akhavan | ○           |             |             |             |
+| Asmae Benazizi | ⬜          |             |             |             |
+| Ian Fan        | X / △       |             |             |             |
+| Kun Zhao       | ○           |             |             |             |
+| Lydia Zhang    | X / ○       |             |             |             |
 
 ## Team communication Protocol
 
@@ -47,19 +46,27 @@ Languages, Libraries, Software Used for this project are listed by tasks.
 
 ### Machine Learning Model
 
-* Optical Character Recognition
-* Tesseract
-* OpenCV
+- Optical Character Recognition
+- Tesseract
+- OpenCV
 
 ### Database
 
-* PostGRES
-* SQL
-* Python ETL
-* [Pokemon TCG API](https://pokemontcg.io/)
+- PostGRES
+- SQL
+- Python ETL
+- [Pokemon TCG API](https://pokemontcg.io/)
+
+The data got also connected to SQL in a DataBase called SwShSeries
 
 ### Visualization
 
-Under consideration -
+Tools used: Flask / HTML
 
-* HTML
+#### Project dashboard
+
+-- Using HTML, we created a website for the end user to look at. on this HTML page you can see the pokemon cards of you choice by making a search in the toolbar as well as the prices of the pokemon cards, the tolls that has been used is flask.
+
+### Presentation
+
+- [Google Slides](https://docs.google.com/presentation/d/1qF4vChUlj-rcls2imSxiKIAQhV3nn66cnlHZGZnHb6g/edit#slide=id.gdd39792527_0_870)
