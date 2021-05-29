@@ -23,8 +23,8 @@ Due to the nature & scope of the project, roles will be similar but not identica
 | Aryana Akhavan | ○       |      X / △       |             |             |
 | Asmae Benazizi | ⬜       |    X / △      |             |             |
 | Ian Fan        | X / △ |        △/X     |             |             |
-| Kun Zhao       | ○       |      ⬜       |             |             |
-| Lydia Zhang    | X / ○    |     ⬜       |             |             |
+| Kun Zhao       | ○       |     ○      |             |             |
+| Lydia Zhang    | X / ○    |    ○       |             |             |
 
 
 ## Topic Rationale
