@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QueryResult</title>
+    <link rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous">
+
+    <!--link to BootStrap-->  
+    <link
+        rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous"
+        />
+    <!--our style sheet-->
+    <link rel="stylesheet" href="static/css/style.css">
+    
+
+</head>
+
+<body class = 'bg-dark'>
+    <div class="wrapper">
+        <!-- Navigation Bar -->
+          <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
+             <a class="navbar-brand" href="index.html">Squirtle_squad</a>
+             <a href="index.html"><img src="static/images/pokemon_banner.png" alt="pokemon_banner_nav" width="45" height="auto"></a>
+          </nav>
+      </div>
+
+
+<!-- 2nd Jumbotron -->
+<div
+  class="p-5 text-center bg-image rounded-3"
+  style="
+    background-image: url('https://www.pngkit.com/png/detail/357-3574207_banner-xy-2-pokemon-tcg-mega-garchomp-ex.png');
+    height: 300px;
+  "
+>
+  <div class="mask" style="background-color:white rgba(0, 0, 0, 0.397);">
+    <div class="d-flex justify-content-center align-items-center h-100">
+      <div >
+        <h1 class="mb-3">Pokemon OCR </h1>
+        <h4 class="mb-3">Price Comparator</h4>
+        <a class="btn btn-outline-light btn-lg" href="#!" role="button">click here</a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- 2nd Jumbotron -->
+
+    <!--Webpage Header-->
+    <div class="jumbotron">
+        <h1 class="display-4">LET'S DISCOVER POKEMON CARDS</h1>
+    </div>
+
+    <!--Article Title and Paragraph-->
+    <div class="container-fluid text-white">
+        <div class="row">
+          <div class="col-md-3">
+            <h3>Visualisation of Pokemon Cards <small>TBD</small></h3>
+          </div>
+          <div class="col-md-9">
+            <p>
+              The purpose of the project is to create an application that accepts user inputted images and then provide an interface to show the user market prices and the card's legalities in the Pokemon Trading Card Game's playing formats.
+        
+            </p>
+        </div>
+      </div>
+    </div>
+
+    <div class = 'container'>
+        <!--image of card-->
+        <!--TODO: replace src with URL from images dictionary of specific card-->
+        <div class = 'row'>
+            <div class = 'col-md-12'><img src= "..//static/images/cramorant.png" alt="scanned card" style='max-width: 75%; height:auto; text-align: left;'>
+            </div>
+        </div>
+    
+
+
+        <!--card type (normal, holo, reversefoil)-->
+        <!--TODO: replace options with only from prices dictionaries of specific card-->
+        <div class = "row">
+            <select name='cardtype' id ='cardtype'>
+                <option value ='normal'>Normal</option>
+                <option value ='holofoil'>Holofoil</option>
+                <option value ='reverseHolofoil'>Reverse Holofoil</option>
+            </select>
+        </div>
+        
+        <!--table-->
+        <div class = "row">
+            <table class="table">
+                <!--table's header row-->
+                <thead>
+                    <tr>
+                        <th>Low</th>
+                        <th>Mid</th>
+                        <th>High</th>
+                        <th>Market</th>
+                    </tr>
+                </thead>
+                <!--table's body rows-->
+                <!--TODO: update body with prices from data-->
+                <tbody>
+                <tr>
+                <td>{{pokemon_Data["prices"]["reverseHolofoil"]["low"]}}</td>
+                <td>{{pokemon_Data["prices"]["reverseHolofoil"]["mid"]}}</td>
+                <td>{{pokemon_Data["prices"]["reverseHolofoil"]["high"]}}</td>
+                <td>{{pokemon_Data["prices"]["reverseHolofoil"]["market"]}}</td>
+
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!--button to go back to 'home'-->
+        <!--TODO: replace with Flask's app.route('/')-->
+        <div class = "row">
+            <button onclick="window.location.href='https\://www.google.ca/';">Submit Another Scan</button>
+        </div>
+
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script>
+    30
+    <script>
+
+    </script>
+    <script src='static/js/app.js'></script>
+</body>
+</html>

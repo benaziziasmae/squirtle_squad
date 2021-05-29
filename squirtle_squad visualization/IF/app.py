@@ -3,8 +3,25 @@ import json
 #create a simple falsk to return the HTML
 app = Flask(__name__)
 
+
 @app.route("/")
-def welcome(): 
+
+def Weclome():
+    
+    return render_template("index.html")
+
+
+
+
+
+
+
+
+
+@app.route("/visualization")
+def scanned(): 
+    with open("pokemon_set.json", "r") as file:
+        pokemon_Data = json.loads(file)
     pokemon_Data = {"name": "Weedle",
         "number":2,
         "legalities":{'unlimited': 'Legal', 'standard': 'Legal', 'expanded': 'Legal'},
@@ -17,7 +34,7 @@ def welcome():
         "date":"2021-05-25 19:48:31.019611",
 
         }
-    return render_template("index.html",pokemon_Data=pokemon_Data)
+    return render_template("visualization.html",pokemon_Data=pokemon_Data)
 
 
 
