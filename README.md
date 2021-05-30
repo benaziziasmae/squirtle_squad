@@ -58,7 +58,7 @@ Below are the selected variables to start:
 * Photo (parsed from link)
 * Prices (low, mid, high)
 
-The option to use the Pokémon TCG Api's SDK was explored but the data type output was not compatible to the JSON data type.
+The option to use the Pokémon TCG API's SDK was explored but the data type output was not compatible to the JSON data type.
 
 ### Machine Learning Model
 
