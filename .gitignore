@@ -129,4 +129,9 @@ dmypy.json
 .pyre/
 
 # config for API keys
-config.py
+/Notebooks/config.py
+
+/Database/config.py
+
+# Mac
+.DS_Store
