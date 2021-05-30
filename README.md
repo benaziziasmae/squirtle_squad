@@ -29,8 +29,8 @@ Due to the nature & scope of the project, roles will be similar but not identica
 | Aryana Akhavan | ○           |             |             |             |
 | Asmae Benazizi | ⬜          |             |             |             |
 | Ian Fan        | X / △       |             |             |             |
-| Kun Zhao       | ○           |             |             |             |
-| Lydia Zhang    | X / ○       |             |             |             |
+| Kun Zhao       | ○           | ○           |             |             |
+| Lydia Zhang    | X / ○       | X / ○       |             |             |
 
 ## Team communication Protocol
 
