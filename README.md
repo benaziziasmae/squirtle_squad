@@ -15,7 +15,7 @@ The purpose of this app is to price check a Pokémon TCG card based on the user 
 
 Below is an example card with collector number located in bottom left corner. Pokémon cards belong to Sets, indicated by the symbol also located in the bottom left corner. Each Set is a part of a larger Series. This version of the cramorant card is from the Sword & Shield base Set of the Sword & Shield Series (currently on-going).
 
-![cramorant](/Machine_Learning/train/cramorant.png)
+![cramorant](/Resources/cramorant.png)
 
 The database shall have its entries pulled from the Pokemon TCG API. This API contains information on prices from [TCGPlayer.com](https://www.tcgplayer.com/). The data will be transformed & optimized to consist of information needed for our visualization. As an initial proof of concept, the initial data will be pulled from the Pokemon TCG API however room for expansion on this would be to obtain prices from other vendors.
 

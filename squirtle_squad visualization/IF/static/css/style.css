@@ -1,0 +1,27 @@
+body {
+  color: #f7f7f7;
+  }
+ 
+img {
+  max-width: 100%;     
+  height:auto;
+  margin: auto;
+  width: 90%
+    }  
+
+select {
+  width: 50%;
+  margin: auto;
+  padding: 5px;
+}
+
+table {
+  width: 80%;
+  margin: auto;
+}
+
+button {
+  width: 50;
+  margin: auto;
+  padding: 10px
+}
