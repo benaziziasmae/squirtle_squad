@@ -39,7 +39,7 @@ After, we load the data Set into a .csv file
 ## Visualization of the pokemon cards 
 
 The final visualization is anticipated as an HTML page that would consist of prices & image of the card.
-
+using flask 
 
 
 
