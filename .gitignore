@@ -133,5 +133,9 @@ dmypy.json
 
 /Database/config.py
 
+squirtle_squad visualization/IF/config.py
+
 # Mac
 .DS_Store
+
+/Machine_Learning/Tensorflow_Object_Detection
