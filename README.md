@@ -29,9 +29,9 @@ Due to the nature & scope of the project, roles will be similar but not identica
 |----------------|--------------|-------------|-------------|-------------|
 | Aryana Akhavan | ○       |             |             |             |
 | Asmae Benazizi | ▢       |             |             |             |
-| Ian Fan        | x / △ |             |             |             |
+| Ian Fan        | X / △ |             |             |             |
 | Kun Zhao       | ○       |             |             |             |
-| Lydia Zhang    | x / ○    |             |             |             |
+| Lydia Zhang    | X / ○    |             |             |             |
 
 ## Team Communication Protocol
 
@@ -65,4 +65,4 @@ Languages, Libraries, Software Used for this project are listed by tasks.
 
 Google Slides was used to create the group presentation as it allows for collaboration from multiple participants. Various images were sourced from Google Images in order to increase the visual appeal of the presentation. Most visuals are of Pokémon from the Sword & Shield Series to align with the app's current capabilities.
 
-![slide_sample](/Resources/PokeScanner.png)
+![PokeScanner](/Resources/slides/PokeScanner.png)
