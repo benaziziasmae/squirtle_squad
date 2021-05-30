@@ -58,3 +58,11 @@ Languages, Libraries, Software Used for this project are listed by tasks.
 ### Visualization
 
 * HTML/ Flask
+
+### Presentation
+
+* [Google Slides](https://docs.google.com/presentation/d/1qF4vChUlj-rcls2imSxiKIAQhV3nn66cnlHZGZnHb6g/edit?usp=sharing)
+
+Google Slides was used to create the group presentation as it allows for collaboration from multiple participants. Various images were sourced from Google Images in order to increase the visual appeal of the presentation. Most visuals are of Pokémon from the Sword & Shield Series to align with the app's current capabilities.
+
+![slide_sample](/Resources/PokeScanner.png)
