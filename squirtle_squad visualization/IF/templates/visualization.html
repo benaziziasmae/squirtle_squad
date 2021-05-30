@@ -11,8 +11,6 @@
     crossorigin="anonymous">
     <!--our style sheet-->
     <link rel="stylesheet" href="../static/css/style.css">
-    
-
 </head>
 
 <body class = 'bg-dark' >
@@ -39,10 +37,10 @@
         <div class = "table-responsive">
             <table class="table" id ="priceTable">
                 <!--table's header row-->
-                <thead id = "tableHead">
+                <thead id = "PriceHead">
                 </thead>
                 <!--table's body rows-->
-                <tbody id = "tableBody">
+                <tbody id = "PriceBody">
                 </tbody>
             </table>
         </div>
@@ -63,13 +61,15 @@
         <!--button to go back to 'home'-->
         <!--TODO: replace with Flask's app.route('/')-->
         <div class = "row">
-            <button onclick="window.location.href='\.\.\/IF\/templates\/home.html'">Submit Another Scan</button>
+            <button onclick="window.location.href='\.\.\/templates\/home.html'">Submit Another Scan</button>
         </div>
         <br>
 
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script>
+    
     <script src='../static/javascript/data.js'></script>
     <script src='../static/javascript/app.js'></script>
+    
 </body>
 </html>
