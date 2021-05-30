@@ -26,10 +26,10 @@ d3.select("#card_image").attr("src", card_info.images.large)
 function buildPriceTable() {
     
     //Populate the Header
-    let thead = d3.select("#tableHead")
+    let thead = d3.select("#PriceHead")
     thead.html("");
     
-    let header = d3.select("#tableHead").append("tr");
+    let header = d3.select("#PriceHead").append("tr");
     Object.keys(card_info['prices'][d3.select("#cardtype").node().value]).forEach(priceLevel =>
         {
             let columnName = header.append("th")
@@ -38,10 +38,10 @@ function buildPriceTable() {
         )
 
     //Populate the body
-    let tbody = d3.select("#tableBody")
+    let tbody = d3.select("#PriceBody")
     tbody.html("");
     
-    let row = d3.select("#tableBody").append("tr");
+    let row = d3.select("#PriceBody").append("tr");
     Object.values(card_info['prices'][d3.select("#cardtype").node().value]).forEach(priceLevel =>
         {
             let cell = row.append("td")
