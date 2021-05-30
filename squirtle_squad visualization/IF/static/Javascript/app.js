@@ -1,80 +1,96 @@
-// import the data from data.js
-const tableData = data;
-console.log(tableData);
-// Reference the HTML table using d3
-var tbody = d3.select("tbody");
+// from flask to html passed
+const card_info = card_data;
 
+// get select reference
+var selectDropDown = d3.select("#cardtype");
 
-function buildTable(data) {
-    // First, clear out any existing data
-    tbody.html("");
-  
-    // Next, loop through each object in the data
-    // and append a row and cells for each value in the row
-    data.forEach((dataRow) => {
-      // Append a row to the table body
-      let row = tbody.append("tr");
-  
-      // Loop through each field in the dataRow and add
-      // each value as a table cell (td)
-      Object.values(dataRow).forEach((val) => {
-        let cell = row.append("td");
-        cell.text(val);
+// Attach event to listen for change
+selectDropDown.on("change",buildPriceTable)
+
+// build the dropdown menu
+function buildSelectD3(card_info) {
+    Object.keys(card_info.prices).forEach(card_type => 
+        {
+            selectDropDown
+            .append("option")
+            .property("value",card_type)
+            .text(card_type)
         }
-      );
-    });
-  }
+        )
+    }
 
+// get image reference & apply new
+d3.select("#card_image").attr("src", card_info.images.large)
 
-// 1. Create a variable to keep track of all the filters as an object.
-var filters = {};
-
-// 3. Use this function to update the filters. 
-function updateFilters() {
-
-    // 4a. Save the element that was changed as a variable.
-  let changedElement = d3.select(this);
-
-    // 4b. Save the value that was changed as a variable.
-  let elementValue = changedElement.property("value");
-  console.log(elementValue);
-
-    // 4c. Save the id of the filter that was changed as a variable.
-  let filterId = changedElement.attr("id");
-  console.log(filterId);
-
-    // 5. If a filter value was entered then add that filterId and value
-    // to the filters list. Otherwise, clear that filter from the filters object.
-  if (elementValue) {
-    filters[filterId] = elementValue;
-  }
-  else {
-    delete filters[filterId];
-  }
-  
-    // 6. Call function to apply all filters and rebuild the table
-    filterTable();
-  
-  }
-  
-  // 7. Use this function to filter the table when data is entered.
-  function filterTable() {
-  
-    // 8. Set the filtered data to the tableData.
-    let filteredData = tableData;
-  
-    // 9. Loop through all of the filters and keep any data that
-    // matches the filter values
-    Object.entries(filters).forEach(([key, value]) => {
-      filteredData = filteredData.filter(row => row[key] === value);
-    });
-
-    // 10. Finally, rebuild the table using the filtered data
-    buildTable(filteredData);
-  }
+// Build the table
+function buildPriceTable() {
     
-  // 2. Attach an event to listen for changes to each filter
-  d3.selectAll("input").on("change", updateFilters);
-  
-  // Build the table when the page loads
-  buildTable(tableData);
+    //Populate the Header
+    let thead = d3.select("#tableHead")
+    thead.html("");
+    
+    let header = d3.select("#tableHead").append("tr");
+    Object.keys(card_info['prices'][d3.select("#cardtype").node().value]).forEach(priceLevel =>
+        {
+            let columnName = header.append("th")
+            columnName.text(priceLevel.charAt(0).toUpperCase()+priceLevel.slice(1))
+        }
+        )
+
+    //Populate the body
+    let tbody = d3.select("#tableBody")
+    tbody.html("");
+    
+    let row = d3.select("#tableBody").append("tr");
+    Object.values(card_info['prices'][d3.select("#cardtype").node().value]).forEach(priceLevel =>
+        {
+            let cell = row.append("td")
+            cell.text(priceLevel)
+        }
+        )
+}
+
+function buildLegalityTable() {
+    
+    //clear the Header
+    let thead = d3.select("#LegalityHead")
+    thead.html("");
+    
+    //select the header
+    let header = d3.select("#LegalityHead").append("tr");
+    //add some spacing
+    header.append("th")
+    //populate the header
+    Object.keys(card_info['legalities']).forEach(gameFormat =>
+        {
+            let columnName = header.append("th")
+            columnName.text(gameFormat.charAt(0).toUpperCase()+gameFormat.slice(1))
+            header.append("th")
+        }
+        )
+
+    //clear the body
+    let tbody = d3.select("#LegalityBody")
+    tbody.html("");
+    
+    //select the body
+    let row = d3.select("#LegalityBody").append("tr");
+    //add some spacing
+    row.append("td")
+    //populate the body
+    Object.values(card_info['legalities']).forEach(gameFormat =>
+        {
+            if (gameFormat=="Legal") {
+                row.append("td").style("background-color", 'green').text(gameFormat)
+            } else {
+                row.append("td").style("background-color", 'red').text(gameFormat)
+            }
+            row.append("td")
+        }
+        )
+}
+
+// Build when page loads
+buildSelectD3(card_info)
+buildPriceTable()
+buildLegalityTable()
