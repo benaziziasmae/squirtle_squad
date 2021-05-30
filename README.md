@@ -25,13 +25,13 @@ The final visualization is anticipated as an HTML page that would consist of det
 
 Due to the nature & scope of the project, roles will be similar but not identical week to week with some roles being responsibilities of multiple team members.
 
-| Team Member    | Week 1 Role  | Week 2 Role | Week 3 Role | Week 4 Role |
+| Team Member    | Segment 1 Role  | Segment 2 Role | Segment 3 Role | Segment 4 Role |
 |----------------|--------------|-------------|-------------|-------------|
-| Aryana Akhavan | ○       |             |             |             |
-| Asmae Benazizi | ▢       |             |             |             |
-| Ian Fan        | X / △ |             |             |             |
-| Kun Zhao       | ○       |             |             |             |
-| Lydia Zhang    | X / ○    |             |             |             |
+| Aryana Akhavan | ○            | X / ○            |             |             |
+| Asmae Benazizi | ▢            | X / ○            |             |             |
+| Ian Fan        | X / △        | X / △ / ▢        |             |             |
+| Kun Zhao       | ○            | X / △            |             |             |
+| Lydia Zhang    | X / ○        | X / △            |             |             |
 
 ## Team Communication Protocol
 
@@ -45,9 +45,20 @@ Languages, Libraries, Software Used for this project are listed by tasks.
 
 ### Database
 
-* [Pokemon TCG API](https://pokemontcg.io/)
+* [Pokémon TCG API](https://pokemontcg.io/)
 * Python ETL
 * SQL PostGRES (established database named *SwShSeries*)
+
+To start, the focus of the app will be the Sword & Shield Series of cards, just to ensure that the project had a reasonable size and scope. Using Python, the data extracted from the Pokémon TCG API was first examined to identify the desired variables necessary for the app, then cleaned to keep only those that were meaningful. After, the dataset was loaded into a .csv file in order to feed into a SQL PostGRES database named *SwShSeries*.
+
+Below are the selected variables to start:
+* Pokémon Name
+* Release Date
+* Legality
+* Photo (parsed from link)
+* Prices (low, mid, high)
+
+The option to use the Pokémon TCG Api's SDK was explored but the data type output was not compatible to the JSON data type.
 
 ### Machine Learning Model
 
