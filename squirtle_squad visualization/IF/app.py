@@ -1,23 +1,62 @@
 from flask import Flask, jsonify, render_template
 import json
-#create a simple falsk to return the HTML
+import sys
+sys.path.append(".")
+from config import tcgapikey, pgpassword
+from sqlalchemy import create_engine
+
+
+
+
+# create a simple falsk to return the HTML
 app = Flask(__name__)
+
+# making the connection
+engine = create_engine('postgresql://postgres:{pgpassword}@localhost:5432/PokemonTCG', echo=False)
+sample_collector_number = '062/202'
+pokemon_Data = None
 
 @app.route("/")
 def welcome(): 
-    pokemon_Data = {"name": "Weedle",
-        "number":2,
-        "legalities":{'unlimited': 'Legal', 'standard': 'Legal', 'expanded': 'Legal'},
-        "images":{'small': 'https://images.pokemontcg.io/swsh35/2.png', 'large': 'https://images.pokemontcg.io/swsh35/2_hires.png'},
-        "prices":{'reverseHolofoil': {'low': 0.05, 'mid': 0.29, 'high': 1.37, 'market': 0.24, 'directLow': 0.14}, 'normal': {'low': 0.01, 'mid': 0.13, 'high': 1.0, 'market': 0.07, 'directLow': 0.05}},
+    
+    # on submission of image (WIP)
+
+    # run machine learning to identify query (result = output variable) (WIP)
+
+    
+    ## Do stuff with database connection (run query)
+    
+    # query engine with result (use sample_collector_number for now)
+
+    # assign global? varaible or pass directly to new html
+    
+    return render_template("home.html")
+
+@app.route("/visualization")
+def returnedCard():
+
+    
+    pokemon_Data = {
+        "id":"swsh35-2",
+        "name":"Weedle",
+        "number":"002\/073",
+        "legalities":
+            {"unlimited":"Legal","standard":"Legal","expanded":"Legal"},
+        "images":{
+            "small":"https:\/\/images.pokemontcg.io\/swsh35\/2.png",
+            "large":"https:\/\/images.pokemontcg.io\/swsh35\/2_hires.png"},
+        "prices":{
+            "reverseHolofoil":
+                {"low":0.05,"mid":0.29,"high":1.37,"market":0.24},
+            "normal":
+                {"low":0.01,"mid":0.13,"high":1.0,"market":0.07}},
         "set_id":"swsh35",
         "set_name":"Champion's Path",
-        "cards_in_set":73,
-        "printed_total":80,
-        "date":"2021-05-25 19:48:31.019611",
+        "date":1622239842548}
 
-        }
-    return render_template("index.html",pokemon_Data=pokemon_Data)
+    
+
+    return render_template("visualization.html", card_data=pokemon_Data)
 
 
 
