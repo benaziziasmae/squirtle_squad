@@ -11,41 +11,40 @@
     <title>Pokemon OCR and price tag</title>
    
    <!-- Main stylesheet and color file-->
-    <link href="../assets/css/style.css" rel="stylesheet">
-    <link id="color-scheme" href="../assets/css/colors/default.css" rel="stylesheet">
+    <link href="{{ url_for('static', filename='assets/css/style.css')}}" rel="stylesheet">
+    <link id="color-scheme" href="{{ url_for('static', filename='assets/css/colors/default.css')}}" rel="stylesheet">
   </head>
   <body data-spy="scroll" data-target=".onpage-navigation" data-offset="60">
     <main>
       <div class="page-loader">
         <div class="loader">Loading...</div>
       </div>
-      <section class="home-section home-parallax home-fade home-full-height bg-dark bg-dark-30" id="home" data-background="../assets/images/giga_pika_eevee.png">
+
+      <br>
+      <form method="post" enctype="multipart/form-data">
+          Select image to upload:
+          <input type="file" name="fileToUpload" id="fileToUpload">
+          <input type="submit" value="Upload Image" name="submit">
+      </form>
+
+      <section class="home-section home-parallax home-fade home-full-height bg-dark bg-dark-30" id="home" data-background="{{ url_for('static', filename='assets/images/giga_pika_eevee.png')}}"></section>
         <div class="titan-caption">
           <div class="caption-content">
             <div class="font-alt mb-20 titan-title-size-3">Pokemon Scanner</div>
-            <div class="font-alt">Click here to start scanning your cards <br/>.
+            <div class="font-alt">upload your picture <br/>.
             </div>
             <div class="font-alt mt-30"><a class="btn btn-border-w btn-round" href="visualization.html">click here</a></div>
           </div>
         </div>
       </section>
     </main>
+    
     <!--  
     JavaScripts
     =============================================
     -->
-    <script src="../assets/lib/jquery/dist/jquery.js"></script>
-    <script src="../assets/lib/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="../assets/lib/wow/dist/wow.js"></script>
-    <script src="../assets/lib/jquery.mb.ytplayer/dist/jquery.mb.YTPlayer.js"></script>
-    <script src="../assets/lib/isotope/dist/isotope.pkgd.js"></script>
-    <script src="../assets/lib/imagesloaded/imagesloaded.pkgd.js"></script>
-    <script src="../assets/lib/flexslider/jquery.flexslider.js"></script>
-    <script src="../assets/lib/owl.carousel/dist/owl.carousel.min.js"></script>
-    <script src="../assets/lib/smoothscroll.js"></script>
-    <script src="../assets/lib/magnific-popup/dist/jquery.magnific-popup.js"></script>
-    <script src="../assets/lib/simple-text-rotator/jquery.simple-text-rotator.min.js"></script>
-    <script src="../assets/js/plugins.js"></script>
-    <script src="../assets/js/main.js"></script>
+    <script src = "{{ url_for('static', filename='assets/lib/jquery/dist/jquery.js')}}"></script>
+    <script src = "{{ url_for('static', filename='assets/lib/wow/dist/wow.js')}}"></script>
+    <script src = "{{ url_for('static', filename='assets/js/main.js')}}"></script>
   </body>
 </html>
