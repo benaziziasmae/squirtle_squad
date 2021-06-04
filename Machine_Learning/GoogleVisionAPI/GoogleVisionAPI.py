@@ -1,12 +1,8 @@
-# install google-cloud-vision dependency
-!pip install google-cloud-vision
-
 # import dependencies
 try: 
     from google.cloud import vision
 except ImportError:
-    !pip install google-cloud-vision
-    from google.cloud import vision
+    print ("Error, google-cloud-vision not installed. Install with 'pip install google-cloud-vision'")
 import os
 import re
 
