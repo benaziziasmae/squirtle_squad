@@ -68,7 +68,11 @@
 
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script>
-    <!--
+    
+    <!-- for use in flask -->
+    <script type="text/javascript"> var card_data = {{ card_data | safe }} </script>
+
+    <!-- testing script for HTML
     <script src='../static/javascript/data.js'></script>
     -->
     <script src='../static/javascript/app.js'></script>

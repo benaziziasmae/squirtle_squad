@@ -4,7 +4,7 @@ import sys
 sys.path.append(".")
 from config import tcgapikey, pgpassword
 from sqlalchemy import create_engine
-
+import requests
 
 
 
@@ -14,27 +14,61 @@ app = Flask(__name__)
 # making the connection
 engine = create_engine('postgresql://postgres:{pgpassword}@localhost:5432/PokemonTCG', echo=False)
 sample_collector_number = '062/202'
-pokemon_Data = None
 
-@app.route("/")
-def welcome(): 
+
+@app.route("/", methods=['GET','POST'])
+def welcome():
+
+    # if post request
+    if requests.method == 'POST':
+
+        uploaded_file = request.files['file']
+        filename = uploaded_file.filename
+
+        ### if want to save image:
+        # filename = secure_filename(uploaded_file.filename)
+        # if filename == '':
+        #    abort(400, 'image has no filename')
+
+        ### use boto3 to image upload image to s3   
+        
+        #request to boto3
+        
+
+        # get image url/uri back
+        image_url = # get image url from boto3 request
+
+        #upload to google (make request to google api)
+        r = requests.post(google url, parameters = {}, json={}, headers{authentication: api_token})    
+
+        rjson = r.json()
+
+        
+        ### request for image uploaded to be deleted
+        
+
+        ### process the file
+
+        query_str = # getting from google results
+
+        return redirect(url_for('returnedCard', query_str = query_str))
+
+    return render_template('home.html')
+
+@app.route("/visualization/<str:query_str>")
+
+def returnedCard(query_str = None):
+
+    #separate sessions if there are multiple people using at once; 
+    ## flask-sqlalchemy
+    session = session_maker()
+
+    pokemon_Data = session.query('pgadminTableName').filter(pokemontable.field == query_str).first()
     
-    # on submission of image (WIP)
-
-    # run machine learning to identify query (result = output variable) (WIP)
-
-    
-    ## Do stuff with database connection (run query)
-    
-    # query engine with result (use sample_collector_number for now)
-
-    # assign global? varaible or pass directly to new html
-    
-    return render_template("home.html")
-
-@app.route("/visualization")
-def returnedCard():
-
+    if not pokemon_Data:
+        flash('We couldnt your card')
+        abort(404, 'not found')
+    # run query > return data
     
     pokemon_Data = {
         "id":"swsh35-2",
