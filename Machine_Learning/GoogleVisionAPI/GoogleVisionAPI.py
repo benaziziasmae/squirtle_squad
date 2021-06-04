@@ -1,5 +1,6 @@
 # install google-cloud-vision dependency
 !pip install google-cloud-vision
+
 # import dependencies
 try: 
     from google.cloud import vision
@@ -45,4 +46,5 @@ except IndexError:
             print('Cannot find collector number')
 
 print(collector_number)
+
 # pass collector_number to query

@@ -5,7 +5,7 @@ import datetime
 import sys
 import os
 sys.path.append(".")
-from config import tcgapikey, pgpassword
+from config import tcgapikey, pgpasswordLC, pgpassword
 from sqlalchemy import create_engine, dialects
 from re import search
 
@@ -88,9 +88,22 @@ data_clean_df = pd.DataFrame(data['data']).drop(
         'set'])
 
 # link to the database & create engine
-engine = create_engine(f'postgresql://postgres:{pgpassword}@localhost:5432/PokemonTCG', echo=False)
+# engine = create_engine(f'postgresql://postgres:{pgpassword}@localhost:5432/PokemonTCG', echo=False)
+engine = create_engine (f'postgresql://postgres:{pgpasswordLC}@database-1.ckh3ticwdlgo.us-east-2.rds.amazonaws.com:5432/postgres', echo=False)
 
 # load into database with format
+data_clean_df.to_sql(
+    'SwShSeries',
+    con=engine,
+    if_exists='replace',
+    index=False,
+    dtype={
+    'legalities':dialects.postgresql.JSON,
+    'images':dialects.postgresql.JSON,
+    'prices':dialects.postgresql.JSON}
+    )
+
+'''
 data_clean_df.to_sql(
     'SwShSeries',
     con=engine,
@@ -101,6 +114,8 @@ data_clean_df.to_sql(
     'images':dialects.postgresql.JSON,
     'prices':dialects.postgresql.JSON}
     )
+'''
+
 
 print('PGAdmin Updated')
 
