@@ -11,6 +11,7 @@
     crossorigin="anonymous">
     <!--our style sheet-->
     <link rel="stylesheet" href="../static/css/style.css">
+    
 </head>
 
 <body class = 'bg-dark' >
@@ -22,9 +23,11 @@
     <div class = 'container'>
         <!--image of card-->
         <div class = 'row'>
-            <img src='' alt="Searching For Card" style='max-width: 100%; height:auto' id ="card_image" class='img-responsive'>
+            <div class="col-md-12">
+                <img src='' alt="Searching For Card" style='max-width: 100%; height:auto' id ="card_image" class='img-responsive'>
+            </div>
         </div>
-        <br>
+    <br>
     
         <!--card type (normal, holo, reversefoil)-->
         <div class = "row">
@@ -59,23 +62,26 @@
         <br>
 
         <!--button to go back to 'home'-->
-        <!--TODO: replace with Flask's app.route('/home') address-->
         <div class = "row">
-            <!--<button onclick="window.location.href='\.\.\/'">Submit Another Scan</button>-->
-            <button onclick="window.location.href='\.\.\/templates\/home.html'">Submit Another Scan</button>
+            <div class = "container-fluid">
+            <a class='btn btn-outline-dark btn-block' href="{{url_for('welcome')}}" role='button'>
+                Submit Another Scan
+            </a>
+            </div>
         </div>
         <br>
 
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script>
     
-    <!-- for use in flask -->
-    <script type="text/javascript"> var card_data = {{ card_data | safe }} </script>
+    <!-- script for use in Flask -->
+    <script> var card_data = {{ card_data | safe }} </script>
 
-    <!-- testing script for HTML
-    <script src='../static/javascript/data.js'></script>
+    <!-- script for use in local testing
+    <script src='{{url_for("static", filename="js/data.js")}}'></script>
     -->
-    <script src='../static/javascript/app.js'></script>
+
+    <script src='{{url_for("static", filename="js/app.js")}}'></script>
     
 </body>
 </html>

@@ -15,13 +15,39 @@
 <body class = 'bg-dark'>
 
     <!---->
+    <form method="post" enctype="multipart/form-data">
+        <input type="file" name="fileToUpload" id="fileToUpload">
+        <input type="submit" value="Upload Image" name="submit">
+    </form>
+
     <form action="{{ url_for('welcome') }}"  method="POST" enctype="multipart/form-data">
         Select image to upload:
         <input type="file" name="fileToUpload" id="fileToUpload">
         <input type="submit" value="Upload Image" name="submit">
     </form>
 
-
+    <section
+        class="home-section home-parallax home-fade home-full-height bg-dark bg-dark-30"
+        id="home"
+        data-background="{{ url_for('static', filename='assets/images/home-background-static.png')}}"
+        style="position: absolute !important;"></section>
+       
+        <div class="titan-caption">
+            <div class="caption-content">
+            <!--app name-->
+            <div class="font-alt mb-20 titan-title-size-3">Pokemon Scanner</div>
+            <!--instruction-->
+            <div class="font-alt">upload your picture. <br>
+                <!--upload form-->
+                <div class="font-alt mt-30" style="position: relative !important;">
+                <form method="post" enctype="multipart/form-data">
+                    <input type="file" name="fileToUpload" id="fileToUpload">
+                    <input type="submit" value="Upload Image" name="submit">
+                </form>
+                </div>       
+            </div>
+            </div>
+        </div>
 
 
 
