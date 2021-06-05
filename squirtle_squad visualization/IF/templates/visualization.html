@@ -4,36 +4,57 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QueryResult</title>
+    <title> Pokemon OCR </title>
     <link rel="stylesheet"
-    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-    crossorigin="anonymous">
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous"
+    >
     <!--our style sheet-->
-    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href=" {{url_for('static',filename='assets/css/style.css') }}">
+    <style>
+        .jumbotron{
+            background-image: url("static/assets/images/tumblr_dd2b87818a29a0b535164486987a1958_9b322bb8_640.gif");
+            background-size:100% 100%;
+            color:black;
+            min-height: 280px;
+        }
+        html, body {
+            position: fixed;
+            top:0;
+            bottom:0;
+            left:0;
+            right:0;
+            width:100%;
+            padding:0;
+            margin:0;
+        }
+    </style>
 </head>
 
 <body class = 'bg-dark' >
     <!--Webpage Header-->
-    <div class="jumbotron" style = 'color: black'>
-        <h1 class="display-6">squirtle_squad project: Pokemon TCG Reader & Market Price Checker</h1>
+    <!-- background-image="{{ url_for('static', filename='assets/images/6pZF9YN.jpg')}}" -->
+    <div class="jumbotron">
+        <h1 class="display-6" style="color:white;" ></h1>
+
     </div>
     <!--main body-->
     <div class = 'container'>
-        <!--image of card-->
-        <div class = 'row'>
-            <img src='' alt="Searching For Card" style='max-width: 100%; height:auto' id ="card_image" class='img-responsive'>
+        <div class='row'>
+            <div>
+                <h1>Squirtle_Squad Project: Pokemon TCG Reader & Market Price Checker </h1>
+            </div> 
         </div>
-        <br>
-    
-        <!--card type (normal, holo, reversefoil)-->
-        <div class = "row">
+        <div class="row"> 
+            <div class="col-xl-6">
+                <img src='' alt="Searching For Card" style='max-width: 100%; height:auto' id ="card_image" class='img-responsive'>
+            </div>    
+                <div class= "col-xl-6"> 
+    <!--card type (normal, holo, reversefoil)-->
             <select name='cardtype' id ='cardtype'>
             </select>
-        </div>
-        <br>
-        
-        <!--tables-->
+    <!--tables-->
         <div class = "table-responsive">
             <table class="table" id ="priceTable">
                 <!--table's header row-->
@@ -44,7 +65,6 @@
                 </tbody>
             </table>
         </div>
-        <br>
 
         <div class = "table-responsive">
             <table class="table" id ="LegalityTable">
@@ -56,20 +76,36 @@
                 </tbody>
             </table>
         </div>
+
+        </div>
+
+        </div>
+    
+        <!--image of card-->
+        <div class = 'row'>
+
+          <div class="col-md-12">
+              <img src='' alt="Searching For Card" style='max-width: 100%; height:auto' id ="card_image" class='img-responsive'>
+          </div>
+        </div>
         <br>
 
         <!--button to go back to 'home'-->
-        <!--TODO: replace with Flask's app.route('/')-->
         <div class = "row">
-            <button onclick="window.location.href='\.\.\/templates\/home page asmae.html'">Submit Another Scan</button>
+          <div class = "container-fluid">
+            <a class='btn btn-outline-dark btn-block' href="{{url_for('welcome')}}" role='button'>
+              Submit Another Scan
+            </a>
+          </div>
         </div>
         <br>
 
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script>
-    
-    <script src='../static/javascript/data.js'></script>
-    <script src='../static/javascript/app.js'></script>
-    
+
+    <!-- <script src='{{url_for("static", filename="Javascript/data.js")}}'></script> -->
+    <script> var card_data = {{ card_data | safe }} </script>
+    <script src='{{url_for("static", filename="Javascript/app.js")}}'></script>
+
 </body>
 </html>

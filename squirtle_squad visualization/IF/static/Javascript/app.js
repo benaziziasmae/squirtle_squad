@@ -9,7 +9,7 @@ selectDropDown.on("change",buildPriceTable)
 
 // build the dropdown menu
 function buildSelectD3(card_info) {
-    Object.keys(card_info.prices).forEach(card_type => 
+    Object.keys(card_info.prices).forEach(card_type =>
         {
             selectDropDown
             .append("option")
@@ -24,11 +24,11 @@ d3.select("#card_image").attr("src", card_info.images.large)
 
 // Build the table
 function buildPriceTable() {
-    
+
     //Populate the Header
     let thead = d3.select("#PriceHead")
     thead.html("");
-    
+
     let header = d3.select("#PriceHead").append("tr");
     Object.keys(card_info['prices'][d3.select("#cardtype").node().value]).forEach(priceLevel =>
         {
@@ -40,7 +40,7 @@ function buildPriceTable() {
     //Populate the body
     let tbody = d3.select("#PriceBody")
     tbody.html("");
-    
+
     let row = d3.select("#PriceBody").append("tr");
     Object.values(card_info['prices'][d3.select("#cardtype").node().value]).forEach(priceLevel =>
         {
@@ -51,11 +51,11 @@ function buildPriceTable() {
 }
 
 function buildLegalityTable() {
-    
+
     //clear the Header
     let thead = d3.select("#LegalityHead")
     thead.html("");
-    
+
     //select the header
     let header = d3.select("#LegalityHead").append("tr");
     //add some spacing
@@ -72,7 +72,7 @@ function buildLegalityTable() {
     //clear the body
     let tbody = d3.select("#LegalityBody")
     tbody.html("");
-    
+
     //select the body
     let row = d3.select("#LegalityBody").append("tr");
     //add some spacing
