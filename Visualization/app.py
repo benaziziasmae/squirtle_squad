@@ -8,7 +8,7 @@ from flask_sqlalchemy import SQLAlchemy
 from .GoogleVisionApi import ImgToStringOCR, UnableToDecodeImageError
 
 from .config import pgpassword, secret_key, SQLALCHEMY_DATABASE_URI
-from .config import aws_access_key_id, aws_secret_access_key, bucket_url, bucket_name
+from .config import aws_access_key_id_IF, aws_secret_access_key_IF, bucket_url_IF, bucket_name_IF
 from sqlalchemy import create_engine
 from sqlalchemy.schema import MetaData, Table
 from sqlalchemy.orm import sessionmaker, Session
@@ -38,8 +38,8 @@ db.init_app(app)
 s3 = boto3.client(
     service_name='s3',
     region_name='ca-central-1',
-    aws_access_key_id=aws_access_key_id,
-    aws_secret_access_key=aws_secret_access_key
+    aws_access_key_id=aws_access_key_id_IF,
+    aws_secret_access_key=aws_secret_access_key_IF
 )
 
 SAMPLE_COLLECTOR_NUMBER = '062/202'
@@ -62,28 +62,30 @@ def welcome():
         ## use boto3 to upload image to S3
         s3.upload_fileobj(
             uploaded_file,
-            "pokemon-cards-1",
+            bucket_name_IF,
             uploaded_file.filename,
             ExtraArgs={
                 "ACL": "public-read",
                 "ContentType": uploaded_file.content_type
             }
         )
-        image_url = "{}{}".format(f"https://{bucket_url}/", filename)
+        image_url = "{}{}".format(f"https://{bucket_url_IF}/", filename)
 
         ## DNN - OCR
         try:
             query_str = ImgToStringOCR(image_url) # upload to Google API Vision (make request to Google API)
-            query_str = query_str.replace('/','%2f') # replace with URL encoding
-            #quote_plus(query_str)
+            if query_str:
+                query_str = query_str.replace('/','%2f') # replace with URL encoding
+                #quote_plus(query_str)
+        
         except UnableToDecodeImageError:
             # On error, delete image in bucket and render home page
-            s3.delete_object(Bucket=bucket_name, Key=image_url)
+            s3.delete_object(Bucket=bucket_name_IF, Key=filename)
             flash('Could not read image, please try again!', 'danger')
             return render_template('home.html')
 
         # delete image in bucket
-        s3.delete_object(Bucket=bucket_name, Key=image_url)
+        s3.delete_object(Bucket=bucket_name_IF, Key=filename)
         
         # redirect to card to display -> url_for(function of the app.route page, pass argument)
         return redirect(url_for('returnedCard', query_str=query_str))
@@ -106,7 +108,7 @@ def returnedCard(query_str=''):
         flash('We couldnt find your Pokemon in our db', 'danger')
         return redirect(url_for('welcome'))
 
-    # reassign data
+    # create pokemon_Data object from query result
     pokemon_Data = {
         "id":result.id,
         "name":result.name,
