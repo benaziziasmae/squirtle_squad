@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokémon OCR</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/css/custom.css">
+</head>
+
+<body>
+    <div class="bg">
+            <br>
+
+            <!--name of card-->
+            <div class="container text-center">
+                <h2><strong>Weedle</strong></h2>
+            </div>
+
+            <!--image of card-->
+            <div class= 'row'>
+                <img src='' alt="Searching For Card" id ="card_image">
+            </div>
+            <br>
+
+            <!--card type (normal, holo, reversefoil)-->
+            <div class= "container text-center">
+                <select name='cardtype' id ='cardtype'>
+                </select>
+            </div>
+            <br>
+
+            <!--tables-->
+            <div class= "row">
+                <table class="table table-bordered" id="priceTable">
+                    <!--table's header row-->
+                    <thead class='thead-light' id='tableHead'>
+                    </thead>
+                    <!--table's body rows-->
+                    <tbody class='tbody-light' id = "tableBody">
+                    </tbody>
+                </table>
+            </div>
+            <br>
+
+            <div class= "row">
+                <table class="table table-sm" id="legalityTable">
+                    <!--table's header row-->
+                    <thead class='thead-light' id='legalityHead'>
+                    </thead>
+                    <!--table's body rows-->
+                    <tbody id='legalityBody'>
+                    </tbody>
+                </table>
+            </div>
+            <br>
+
+            <!--button to go back to 'home'-->
+            <!--TODO: replace with Flask's app.route('/')-->
+            <div class= "container text-center">
+                <button>Submit Another Scan</button>
+            </div>
+            <br>
+
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script>
+    <script src='static/javascript/data.js'></script>
+    <script src='static/javascript/app.js'></script>
+  </body>

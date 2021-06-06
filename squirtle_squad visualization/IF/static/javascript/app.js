@@ -1,13 +1,13 @@
-// from flask to html passed
+// From flask to HTML passed
 const card_info = card_data;
 
-// get select reference
+// Get select reference
 var selectDropDown = d3.select("#cardtype");
 
 // Attach event to listen for change
 selectDropDown.on("change",buildPriceTable)
 
-// build the dropdown menu
+// Build the dropdown menu
 function buildSelectD3(card_info) {
     Object.keys(card_info.prices).forEach(card_type => 
         {
@@ -19,13 +19,14 @@ function buildSelectD3(card_info) {
         )
     }
 
-// get image reference & apply new
+// Get image reference & apply new
 d3.select("#card_image").attr("src", card_info.images.large)
+
 
 // Build the table
 function buildPriceTable() {
     
-    //Populate the Header
+    // Populate the Header
     let thead = d3.select("#tableHead")
     thead.html("");
     
@@ -37,7 +38,7 @@ function buildPriceTable() {
         }
         )
 
-    //Populate the body
+    // Populate the body
     let tbody = d3.select("#tableBody")
     tbody.html("");
     
@@ -50,17 +51,17 @@ function buildPriceTable() {
         )
 }
 
-function buildLegalityTable() {
+function buildlegalityTable() {
     
-    //clear the Header
-    let thead = d3.select("#LegalityHead")
+    // Clear the Header
+    let thead = d3.select("#legalityHead")
     thead.html("");
     
-    //select the header
-    let header = d3.select("#LegalityHead").append("tr");
-    //add some spacing
+    // Select the header
+    let header = d3.select("#legalityHead").append("tr");
+    // Add some spacing
     header.append("th")
-    //populate the header
+    // Populate the header
     Object.keys(card_info['legalities']).forEach(gameFormat =>
         {
             let columnName = header.append("th")
@@ -69,21 +70,22 @@ function buildLegalityTable() {
         }
         )
 
-    //clear the body
-    let tbody = d3.select("#LegalityBody")
+    // Clear the body
+    let tbody = d3.select("#legalityBody")
     tbody.html("");
     
-    //select the body
-    let row = d3.select("#LegalityBody").append("tr");
-    //add some spacing
+    // Select the body
+    let row = d3.select("#legalityBody").append("tr");
+
+    // Add some spacing
     row.append("td")
-    //populate the body
+    // Populate the body
     Object.values(card_info['legalities']).forEach(gameFormat =>
         {
             if (gameFormat=="Legal") {
                 row.append("td").style("background-color", 'green').text(gameFormat)
             } else {
-                row.append("td").style("background-color", 'red').text(gameFormat)
+                row.append("td").style("background-color", 'light-red').text(gameFormat)
             }
             row.append("td")
         }
@@ -93,4 +95,4 @@ function buildLegalityTable() {
 // Build when page loads
 buildSelectD3(card_info)
 buildPriceTable()
-buildLegalityTable()
+buildlegalityTable()
