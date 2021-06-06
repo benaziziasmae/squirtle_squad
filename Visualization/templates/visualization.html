@@ -27,18 +27,17 @@
 
     <!--main body-->
     <div class = 'container'>
-        <div class='row'>
-            <div>
-                <h1>Pokemon TCG Collector Number Scanner & Market Price Checker </h1>
-            </div> 
-        </div>
+        <h1>Prices for {{ card_data.name }}</h1>
+    </div> 
 
         <div class="row">
-            
+            <div class="col-md-2"></div>
             <!--image of card-->
-            <div class="col-md-12">
+            <div class="col-md-8">
                 <img src='' alt="Searching For Card" style='max-width: 100%; height:auto' id ="card_image" class='img-responsive'>
             </div>    
+            <div class="col-md-2"></div>
+        </div>
             
             <div class= "col-xl-6"> 
             <!--card type (normal, holo, reversefoil)-->
@@ -68,10 +67,9 @@
                         <tbody id = "LegalityBody"></tbody>
                     </table>
                 </div>
-
             </div>
 
-        </div>
+        
     
         <br>
 
