@@ -1,0 +1,14 @@
+input[type="file"]::file-selector-button {
+  border: 2px solid #d3cecb;
+  padding: 0.8em 1.6em;
+  border-radius: 0.8em;
+  background-color: #d3cecb;
+  transition: 1s;
+}
+input[type="submit"] {
+  border: 2px solid #d3cecb;
+  padding: 0.8em 1.6em;
+  border-radius: 0.8em;
+  background-color: #d3cecb;
+  transition: 1s;
+}
