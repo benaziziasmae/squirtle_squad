@@ -1,38 +1,38 @@
 .bg{
-    background-image: url(../images/pikachu_clear.png), url(../images/color.jpeg);
+    background-image: url(../images/color.jpeg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
 img {
-    max-width: 30%;     
-    height:auto;
+    max-width: 50%;     
+    height: auto;
     margin: auto;
-    width: 30%;
     position: center;
 } 
 
 h2 {
     /* color: white;
     text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue; */
-    font-size: 80px;
+    font-size: 70px;
     color: #fff;
     text-align: center;
     -webkit-animation: glow 1s ease-in-out infinite alternate;
     -moz-animation: glow 1s ease-in-out infinite alternate;
     animation: glow 1s ease-in-out infinite alternate;
-    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    /* text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073; */
+    text-shadow: -1px 0 black, 0 2.5px black, 2.5px 0 black, 0 -1px black;
 }
 
-@-webkit-keyframes glow {
+/* @-webkit-keyframes glow {
   from {
     text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
   }
   to {
     text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
   }
-}
+} */
 
 select {
     border: 2px solid #d3cecb;
