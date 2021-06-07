@@ -33,11 +33,6 @@ Due to the nature & scope of the project, roles will be similar but not identica
 | Kun Zhao       | ○            | X / △            |             |             |
 | Lydia Zhang    | X / ○        | X / △            |             |             |
 
-## Team Communication Protocol
-
-Team members communicated through Slack and voice communications supported by Microsoft Teams & Google Hangouts. Screen-sharing capabilities on such platforms were crucial to facilitate information sharing and troubleshooting.
-
-Current tasks, scratchpad and brainstormed ideas are on [Google Sheets](https://docs.google.com/spreadsheets/d/133HnyivTdR334dvsgrOn8IoTsdS8Uze6dNppac0ljDY/edit#gid=0) and [Trello](https://trello.com/b/3LoHN9J1/final-project-squirtlesquad). A Gantt Chart is within the realm of possibility to be added.
 
 ## Resources
 
