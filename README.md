@@ -9,7 +9,7 @@ This repository hosts source code & background information for a Pokémon TCG ca
 
 This topic was selected due to the light-heartedness of its nature which at the same time demonstrates the mastery of data visualization, data base administration & management, and machine learning. For all intents and purposes, the project shall hence forth be referred to as an 'app'. A flow chart representing the processes of the app is shown below.
 
-![process](/Resources/process.png)
+![process](/Resources/updated_process.png)
 
 The purpose of this app is to price check a Pokémon TCG card based on the user input via a video, scan or static image of the card they wish to know about. The first form of implementation that will be attempted will be for a user to submit a static image of the card. Then through machine learning & computer vision, a packet of information consisting at minimum of the collector number will be sent to a module that will perform the query in a regularly updatable database.
 
