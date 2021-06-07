@@ -14,14 +14,31 @@
     Document Title
     =============================================
     -->
+
     <title>Pokemon OCR and price tag</title>
 
+        <!-- Default stylesheets-->
+        <link href="assets/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Template specific stylesheets-->
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Volkhov:400i" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+        <link href="assets/lib/animate.css/animate.css" rel="stylesheet">
+        <link href="assets/lib/components-font-awesome/css/font-awesome.min.css" rel="stylesheet">
+        <link href="assets/lib/et-line-font/et-line-font.css" rel="stylesheet">
+        <link href="assets/lib/flexslider/flexslider.css" rel="stylesheet">
+        <link href="assets/lib/owl.carousel/dist/assets/owl.carousel.min.css" rel="stylesheet">
+        <link href="assets/lib/owl.carousel/dist/assets/owl.theme.default.min.css" rel="stylesheet">
+        <link href="assets/lib/magnific-popup/dist/magnific-popup.css" rel="stylesheet">
+        <link href="assets/lib/simple-text-rotator/simpletextrotator.css" rel="stylesheet">
+
+  
    <!-- Main stylesheet and color file-->
     <link href="{{ url_for('static', filename='assets/css/style.css')}}" rel="stylesheet">
     <link id="color-scheme" href="{{ url_for('static', filename='assets/css/colors/default.css')}}" rel="stylesheet">
   </head>
 
-  <body data-spy="scroll" data-target=".onpage-navigation" data-offset="60">
+  <body data-spy="scroll" data-target=".onpage-navigation" data-offset="60" style= "margin:0px; padding:0px; background-color:rgb(22, 37, 37);">
     {% with messages = get_flashed_messages(with_categories=true) %}
     {% if messages %}
 
@@ -39,19 +56,19 @@
         });
     </script>
 
-    <main>
+    <main style ="margin:0px !important ;padding:0px !important">
       <div class="page-loader">
         <div class="loader">Loading...</div>
       </div>
 
       <br>
-      <section class="home-section home-parallax home-fade home-full-height bg-dark bg-dark-30" id="home" data-background="{{ url_for('static', filename='home/img/home-background-static.png')}}"></section>
+      <section class="home-section home-parallax home-fade home-full-height bg-dark bg-dark-30" id="home" data-background="{{ url_for('static', filename='assets/images/giga_pika_eevee.png')}}" style="position: absolute !important;"></section>
         <div class="titan-caption">
           <div class="caption-content">
             <div class="font-alt mb-20 titan-title-size-3">Pokemon Scanner</div>
             <div class="font-alt">upload your picture <br/>.
-
-            <div class="font-alt mt-30">
+ 
+            <div class="font-alt mt-30" style="position: relative !important;">
               <form method="post" enctype="multipart/form-data">
 
                   <input type="file" name="fileToUpload" id="fileToUpload">
@@ -68,7 +85,18 @@
     JavaScripts
     =============================================
     -->
-    <script src = "{{ url_for('static', filename='assets/lib/wow/dist/wow.js')}}"></script>
-    <script src = "{{ url_for('static', filename='assets/js/main.js')}}"></script>
+    <script src="{{ url_for('static', filename='assets/lib/jquery/dist/jquery.js')}}"></script>
+    <script src="{{ url_for('static', filename='assets/lib/bootstrap/dist/js/bootstrap.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='assets/lib/wow/dist/wow.js')}}"></script>
+    <script src="{{ url_for('static', filename='assets/lib/jquery.mb.ytplayer/dist/jquery.mb.YTPlayer.js')}}"></script>
+    <script src="{{ url_for('static', filename='assets/lib/isotope/dist/isotope.pkgd.js')}}"></script>
+    <script src="{{ url_for('static', filename='assets/lib/imagesloaded/imagesloaded.pkgd.js')}}"></script>
+    <script src="{{ url_for('static', filename='assets/lib/flexslider/jquery.flexslider.js')}}"></script>
+    <script src="{{ url_for('static', filename='assets/lib/owl.carousel/dist/owl.carousel.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='assets/lib/smoothscroll.js')}}"></script>
+    <script src="{{ url_for('static', filename='assets/lib/magnific-popup/dist/jquery.magnific-popup.js')}}"></script>
+    <script src="{{ url_for('static', filename='assets/lib/simple-text-rotator/jquery.simple-text-rotator.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='assets/js/plugins.js')}}"></script>
+    <script src="{{ url_for('static', filename='assets/js/main.js')}}"></script>
   </body>
 </html>

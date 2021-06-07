@@ -9,4 +9,31 @@ html, body {
     margin:0;
     color: #ffffff;
     text-align: center;
+    background-image: url("static/img/BackgroundTransparent.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
 }
+
+body.content {
+    max-width: 500px;
+    margin: auto;
+    padding: 10px;
+  }
+
+
+input[type="file"]::file-selector-button {
+    border: 2px solid #d3cecb;
+    padding: 0.8em 1.6em;
+    border-radius: 0.8em;
+    background-color: #d3cecb;
+    transition: 1s;
+  }
+  input[type="submit"] {
+    border: 2px solid #d3cecb;
+    padding: 0.8em 1.6em;
+    border-radius: 0.8em;
+    background-color: #d3cecb;
+    transition: 1s;
+  }
+  

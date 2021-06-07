@@ -96,13 +96,13 @@ def welcome():
 def returnedCard(query_str=''):
 
     # convert inbound query_str variable into query term for database
-    query_str = query_str.replace('%2f','/') or SAMPLE_COLLECTOR_NUMBER
+    query_str = query_str.replace('%2f','/')
         
     metadata = MetaData()
     SwShSeries = Table('SwShSeries', metadata, autoload=True, autoload_with=db.engine)
 
     result = db.session.query(SwShSeries)\
-                        .filter(SwShSeries.c.number == SAMPLE_COLLECTOR_NUMBER)\
+                        .filter(SwShSeries.c.number == query_str)\
                         .first()
     if not result:
         flash('We couldnt find your Pokemon in our db', 'danger')

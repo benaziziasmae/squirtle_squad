@@ -43,7 +43,6 @@ def ImgToStringOCR(imageURL=None):
             print('Cannot find collector number')
             raise UnableToDecodeImageError('Cannot find collector number')
 
-    print(collector_number)
     return collector_number
 
 # pass collector_number to query

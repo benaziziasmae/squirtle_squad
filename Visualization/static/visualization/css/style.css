@@ -1,12 +1,55 @@
 html, body {
-    position: fixed;
-    top:0;
-    bottom:0;
-    left:0;
-    right:0;
-    width:100%;
-    padding:0;
-    margin:0;
     color: #ffffff;
     text-align: center;
+}
+
+.bg{
+    background-image: url(../images/color.jpeg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+img {
+    max-width: 50%;     
+    height: auto;
+    margin: auto;
+    position: center;
+} 
+
+h2 {
+    /* color: white;
+    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue; */
+    font-size: 70px;
+    color: #fff;
+    text-align: center;
+    -webkit-animation: glow 1s ease-in-out infinite alternate;
+    -moz-animation: glow 1s ease-in-out infinite alternate;
+    animation: glow 1s ease-in-out infinite alternate;
+    /* text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073; */
+    text-shadow: -1px 0 black, 0 2.5px black, 2.5px 0 black, 0 -1px black;
+}
+
+select {
+    border: 2px solid #d3cecb;
+    padding: 0.8em 1.6em;
+    border-radius: 0.8em;
+    background-color: #d3cecb;
+    transition: 1s;
+}
+
+table{
+    width: 25%;
+    margin: 50px;
+    padding: 30px;
+    position: center;
+    text-align: center;
+}
+
+button {
+    border: 2px solid #d3cecb;
+    padding: 0.8em 1.6em;
+    border-radius: 0.8em;
+    background-color: #d3cecb;
+    transition: 1s;
 }
