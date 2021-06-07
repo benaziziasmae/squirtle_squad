@@ -129,4 +129,15 @@ dmypy.json
 .pyre/
 
 # config for API keys
-config.py
+/Notebooks/config.py
+
+/Database/config.py
+
+squirtle_squad visualization/IF/config.py
+
+TFODCourse
+
+# Mac
+.DS_Store
+Machine_Learning/GoogleVisionAPI/valued-bastion-303823-bf54c21ee612.json
+Notebooks/valued-bastion-303823-bf54c21ee612.json

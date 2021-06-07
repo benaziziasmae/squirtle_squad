@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QueryResult</title>
+    <link rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous">
+    <!--our style sheet-->
+    <link rel="stylesheet" href="static/css/style.css">
+</head>
+<body class = 'bg-dark'>
+
+    <!---->
+    <form action="{{ url_for('welcome') }}"  method="POST" enctype="multipart/form-data">
+        Select image to upload:
+        <input type="file" name="fileToUpload" id="fileToUpload">
+        <input type="submit" value="Upload Image" name="submit">
+    </form>
+
+
+
+
+
+    <br>
+    <div class = "row">
+        <!--<button onclick="window.location.href='\.\.\/visualization'">Submit Scan</button>-->
+        <button onclick="window.location.href='\/visualization'">Submit Scan</button>
+    </div>
+    <br>
+</body>
+</html>
