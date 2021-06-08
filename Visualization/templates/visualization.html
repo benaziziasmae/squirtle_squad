@@ -17,21 +17,17 @@
     <!--local testing
     <link rel="stylesheet" href="..\static\visualization\css\style.css">
     -->
-    <style>
-
-    </style>
 </head>
 
 <body class = 'bg-dark' >
 
 
     <!--main body-->
-    <div class = 'container'>
+    <div class = 'container-fluid'>
         <div class='row'>
-            <div>
-                <h1>Pokemon TCG Collector Number Scanner & Market Price Checker </h1>
-            </div> 
+            <h3>Prices & Legality for {{ card_data.name }}</h3>
         </div>
+        <br>
 
         <div class="row">
             <!--image of card-->
@@ -43,7 +39,7 @@
         </div>
             
         <div class="row">
-            <div class= "col-md-12"> 
+            <div class= "col-md-12" style="padding: 20px;"> 
             <!--card type (normal, holo, reversefoil)-->
                 <select name='cardtype' id ='cardtype' style="display: block; margin:0 auto;"></select>
             </div>
@@ -51,8 +47,8 @@
     </div>
 
     <!--tables-->
-    <div class= "col-md-12"> 
-        <!--price table-->
+    <div class= "col-md-12" style="padding-left:5%; padding-right:5%"> 
+        <!--price table-->  
         <div class = "table-responsive">
             <table class="table" id ="priceTable">
                 <!--table's header row-->
@@ -63,6 +59,7 @@
                 </tbody>
             </table>
         </div>
+        <br>
 
         <!--legality table-->
         <div class = "table-responsive">
@@ -79,7 +76,7 @@
     <!--button to go back to 'home'-->
     <div class = "row">
         <div class = "container-fluid">
-            <a class='btn btn-outline-light btn-dark btn-block' href="{{url_for('welcome')}}" role='button'>
+            <a class='btn btn-outline-light btn-dark' href="{{url_for('welcome')}}" role='button'>
                 Submit Another Scan
             </a>
         </div>
