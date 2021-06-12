@@ -1,0 +1,106 @@
+  
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src = "{{ url_for('static', filename='home/lib/jquery/dist/jquery.js')}}"></script>
+    <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous"
+    >
+    <!--
+    Document Title
+    =============================================
+    -->
+
+    <title>Pokemon OCR and price tag</title>
+
+        <!-- Default stylesheets-->
+        <link href="static/home/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+        <!-- Template specific stylesheets-->
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Volkhov:400i" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+        <link href="/static/home/lib/animate.css/animate.css" rel="stylesheet">
+        <link href="/static/home/lib/components-font-awesome/css/font-awesome.min.css" rel="stylesheet">
+        <link href="/static/home/lib/et-line-font/et-line-font.css" rel="stylesheet">
+        <link href="/static/home/lib/flexslider/flexslider.css" rel="stylesheet">
+        <link href="/static/home/lib/owl.carousel/dist/assets/owl.carousel.min.css" rel="stylesheet">
+        <link href="/static/home/lib/owl.carousel/dist/assets/owl.theme.default.min.css" rel="stylesheet">
+        <link href="/static/home/lib/magnific-popup/dist/magnific-popup.css" rel="stylesheet">
+        <link href="/static/home/lib/simple-text-rotator/simpletextrotator.css" rel="stylesheet">
+
+  
+   <!-- Main stylesheet and color file-->
+    <link href="{{ url_for('static', filename='home/css/style.css')}}" rel="stylesheet">
+    <link id="color-scheme" href="{{ url_for('static', filename='home/css/colors/default.css')}}" rel="stylesheet">
+  </head>
+
+  <body data-spy="scroll" data-target=".onpage-navigation" data-offset="60" style= "margin:0px; padding:0px; background-color:rgb(22, 37, 37);">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+
+      {% for category, message in messages %}
+      <div id="flash" class="alert alert-{{ category }}">{{ message }}</div>
+      {% endfor %}
+    {% endif %}
+    {% endwith %}
+
+    <script>
+        $(function() {
+           $('#flash').delay(500).fadeIn('normal', function() {
+              $(this).delay(1500).fadeOut();
+           });
+        });
+    </script>
+
+    <main style ="margin:0px !important ;padding:0px !important">
+      <div class="page-loader">
+        <div class="loader">Loading...</div>
+      </div>
+
+      <br>
+      <section class="home-section home-parallax home-fade home-full-height bg-dark bg-dark-30" id="home" data-background="{{ url_for('static', filename='home/img/BackgroundTransparent.png')}}" style="position: absolute !important;">
+        <div class="titan-caption">
+          <div class="caption-content">
+            <div class="font-alt mb-20 titan-title-size-3">Pokemon TCG Scanner</div>
+            <div class="font-alt">upload your photo<br>
+              <br>
+ 
+            <div class="font-alt" style="position: relative !important">
+              <form method="post" enctype="multipart/form-data">
+
+                  <input type="file" name="fileToUpload" id="fileToUpload" style="display: block; margin: 0 auto;">
+                  <br>
+                  <input class="input-lg" type="submit" value="Upload Image" name="submit" style="color: black;">
+              </form>
+              <!-- <a class="btn btn-border-w btn-round" href="visualization.html"></a> -->
+            </div>
+          </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!--
+    JavaScripts
+    =============================================
+    -->
+    <script src="{{ url_for('static', filename='home/lib/jquery/dist/jquery.js')}}"></script>
+    <script src="{{ url_for('static', filename='home/lib/bootstrap/dist/js/bootstrap.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='home/lib/wow/dist/wow.js')}}"></script>
+    <script src="{{ url_for('static', filename='home/lib/jquery.mb.ytplayer/dist/jquery.mb.YTPlayer.js')}}"></script>
+    <script src="{{ url_for('static', filename='home/lib/isotope/dist/isotope.pkgd.js')}}"></script>
+    <script src="{{ url_for('static', filename='home/lib/imagesloaded/imagesloaded.pkgd.js')}}"></script>
+    <script src="{{ url_for('static', filename='home/lib/flexslider/jquery.flexslider.js')}}"></script>
+    <script src="{{ url_for('static', filename='home/lib/owl.carousel/dist/owl.carousel.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='home/lib/smoothscroll.js')}}"></script>
+    <script src="{{ url_for('static', filename='home/lib/magnific-popup/dist/jquery.magnific-popup.js')}}"></script>
+    <script src="{{ url_for('static', filename='home/lib/simple-text-rotator/jquery.simple-text-rotator.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='home/js/plugins.js')}}"></script>
+    <script src="{{ url_for('static', filename='home/js/main.js')}}"></script>
+  </body>
+</html>

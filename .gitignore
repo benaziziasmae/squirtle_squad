@@ -14,7 +14,7 @@ dist/
 downloads/
 eggs/
 .eggs/
-lib/
+
 lib64/
 parts/
 sdist/
@@ -141,3 +141,7 @@ TFODCourse
 .DS_Store
 Machine_Learning/GoogleVisionAPI/valued-bastion-303823-bf54c21ee612.json
 Notebooks/valued-bastion-303823-bf54c21ee612.json
+Visualization/config.py
+Visualization/valued-bastion-303823-bf54c21ee612.json
+Machine_Learning/GoogleVisionAPI/GoogleCloudBucket.py
+Visualization/templates/home copy.html

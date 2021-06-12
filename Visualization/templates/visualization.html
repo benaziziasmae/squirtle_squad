@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Pokemon OCR </title>
+    <link rel="stylesheet"
+        href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous"
+    >
+    <!--our style sheet-->
+    
+    <link rel="stylesheet" href=" {{url_for('static',filename='visualization/css/style.css') }}">
+    
+    <!--local testing
+    <link rel="stylesheet" href="..\static\visualization\css\style.css">
+    -->
+</head>
+
+<body class = 'bg-dark' >
+
+
+    <!--main body-->
+    <div class = 'container-fluid'>
+        <div class='row'>
+            <h3>Prices & Legality for {{ card_data.name }}</h3>
+        </div>
+        <br>
+
+        <div class="row">
+            <!--image of card-->
+            <div class="col-2"></div>
+            <div class="col-8">
+                <img src='' alt="Searching For Card" style='max-width: 100%; height:auto' id ="card_image" class='img-responsive'>
+            </div>
+            <div class="col-2"></div>
+        </div>
+            
+        <div class="row">
+            <div class= "col-md-12" style="padding: 20px;"> 
+            <!--card type (normal, holo, reversefoil)-->
+                <select name='cardtype' id ='cardtype' style="display: block; margin:0 auto;"></select>
+            </div>
+        </div>
+    </div>
+
+    <!--tables-->
+    <div class= "col-md-12" style="padding-left:5%; padding-right:5%"> 
+        <!--price table-->  
+        <div class = "table-responsive">
+            <table class="table" id ="priceTable">
+                <!--table's header row-->
+                <thead id = "PriceHead">
+                </thead>
+                <!--table's body rows-->
+                <tbody id = "PriceBody">
+                </tbody>
+            </table>
+        </div>
+        <br>
+
+        <!--legality table-->
+        <div class = "table-responsive">
+            <table class="table" id ="LegalityTable">
+                <!--table's header row-->
+                <thead id = "LegalityHead"></thead>
+                <!--table's body rows-->
+                <tbody id = "LegalityBody"></tbody>
+            </table>
+        </div>
+    </div>
+    <br>
+
+    <!--button to go back to 'home'-->
+    <div class = "row">
+        <div class = "container-fluid">
+            <a class='btn btn-outline-light btn-dark' href="{{url_for('welcome')}}" role='button'>
+                Submit Another Scan
+            </a>
+        </div>
+    </div>
+    <br>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script>
+    
+    <!-- script for use in local testing
+    <script src='..\static\visualization\js\data.js'></script>
+    -->
+    <script> var card_data = {{ card_data | safe }} </script>
+    <script src='{{url_for("static", filename="visualization/js/app.js")}}'></script>
+
+</body>
+</html>
