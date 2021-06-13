@@ -9,7 +9,7 @@ This repository hosts source code & background information for a Pokémon TCG ca
 
 This topic was selected due to the light-heartedness of its nature and to demonstrate the mastery of data visualization, data base administration & management, and machine learning. For all intents and purposes, the project shall hence forth be referred to as an 'app'. A flow chart representing the processes of the app is shown below.
 
-![process](/Resources/process.png)
+![concept](/Resources/concept.png)
 
 The purpose of this app is to price check a Pokémon TCG card based on the user input via a still frame image (captured via video, scan or static image of the card) they wish to know about. Then through machine learning & computer vision, a packet of information consisting at minimum of the collector number, if recognizable, will be sent to a function that will perform the query in a regularly updatable database.
 
@@ -115,3 +115,25 @@ By expanding the database, the app could include a graph plotting the prices as 
 Google Slides was used to create the group presentation as it allows for collaboration from multiple participants. Images were sourced from Google Image searches in order to increase the visual appeal of the presentation. Most visuals are of Pokémon from the Sword & Shield Series to align with the app's current capabilities.
 
 ![PokeScanner](/Resources/slides/PokeScanner.png)
+
+### Demo
+
+![demo](/Resources/demo.gif)
+
+### Flow Chart of App
+
+![appflow](/Resources/AppFlowChart.png)
+
+To delve deeper into the flow of the app, the above flow chart represents the steps and communications the app takes between databases and API's where the steps are labelled above and described below.
+
+1. User opens app; app sends request from host server (GET request)
+2. App responds with home page
+3. User uploads image via a POST request. The app recognizes the POST request has occured and has an `if` block
+4. The uploaded image is passed and uploaded into S3 Buckets
+5. URI for the image in the Bucket is created and passed back to the app.
+6. The app passes this URI to Google Cloud Vision API.
+7. Google Cloud Vision API responds. The app's internal script takes the response and filters out what is needed for the database querying (ie: The collector number)
+8. The home page redirects to the Visualization page passing along the collector number as the query string.
+9. Visualization flask runs query from database using the query string
+10. The Database returns an entry where the Visualization takes the response assigns the returned data as a dictionary for the HTML and Javascript to use.
+11. The HTML and Javascript take the information from the Flask and presents it to the user.

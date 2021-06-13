@@ -28,6 +28,8 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 # Create Engine
 
+
+
 # initialize the db connection
 db = SQLAlchemy()
 db.init_app(app)
@@ -39,6 +41,7 @@ s3 = boto3.client(
     aws_access_key_id=aws_access_key_id_IF,
     aws_secret_access_key=aws_secret_access_key_IF
 )
+
 
 POKEMON_DATA = None
 
@@ -94,7 +97,6 @@ def returnedCard(query_str=''):
 
     # convert inbound query_str variable into query term for database
     query_str = query_str.replace('%2f','/')
-
         
     metadata = MetaData()
     SwShSeries = Table('SwShSeries', metadata, autoload=True, autoload_with=db.engine)
@@ -103,7 +105,7 @@ def returnedCard(query_str=''):
                         .filter(SwShSeries.c.number == query_str)\
                         .first()
     if not result:
-        flash('We couldnt find your Pokemon in our db or the photo was unable to be parsed', 'danger')
+        flash('We couldnt find your Pokemon in our db', 'danger')
         return redirect(url_for('welcome'))
 
     # create pokemon_Data object from query result
