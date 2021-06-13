@@ -118,6 +118,8 @@ Google Slides was used to create the group presentation as it allows for collabo
 
 ### Demo
 
+Attached is a gif of the app in demo. Due to the capture process, there was some delay in speed and responsiveness of the machine the app was being demo'd off of. 
+
 ![demo](/Resources/demo.gif)
 
 ### Flow Chart of App
