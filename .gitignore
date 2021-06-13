@@ -134,9 +134,13 @@ dmypy.json
 /Database/config.py
 
 squirtle_squad visualization/IF/config.py
+
 Machine_Learning/GoogleVisionAPI/valued-bastion-303823-bf54c21ee612.json
+
 Notebooks/valued-bastion-303823-bf54c21ee612.json
+
 Visualization/config.py
+
 Visualization/valued-bastion-303823-bf54c21ee612.json
 
 TFODCourse
@@ -149,5 +153,7 @@ Visualization/templates/home copy.html
 
 # internal reports
 Report.docx
+
 report.md
+
 report.md
