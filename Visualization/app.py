@@ -9,13 +9,13 @@ from .GoogleVisionApi import ImgToStringOCR, UnableToDecodeImageError
 
 from .config import pgpassword, secret_key, SQLALCHEMY_DATABASE_URI
 from .config import aws_access_key_id_IF, aws_secret_access_key_IF, bucket_url_IF, bucket_name_IF
-from sqlalchemy import create_engine
+# from sqlalchemy import create_engine
 from sqlalchemy.schema import MetaData, Table
 from sqlalchemy.orm import sessionmaker, Session
 from werkzeug.utils import secure_filename
 import boto3
-from sqlalchemy.ext.automap import automap_base
-from urllib.parse import urlencode, quote_plus, unquote
+# from sqlalchemy.ext.automap import automap_base
+# from urllib.parse import urlencode, quote_plus, unquote
 
 # Create a simple flask to return the HTML
 app = Flask(__name__)
@@ -42,7 +42,7 @@ s3 = boto3.client(
     aws_secret_access_key=aws_secret_access_key_IF
 )
 
-SAMPLE_COLLECTOR_NUMBER = '062/202'
+
 POKEMON_DATA = None
 
 @app.route("/", methods = ['GET','POST'])
