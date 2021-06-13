@@ -9,13 +9,13 @@ from .GoogleVisionApi import ImgToStringOCR, UnableToDecodeImageError
 
 from .config import pgpassword, secret_key, SQLALCHEMY_DATABASE_URI
 from .config import aws_access_key_id_IF, aws_secret_access_key_IF, bucket_url_IF, bucket_name_IF
-from sqlalchemy import create_engine
+# from sqlalchemy import create_engine
 from sqlalchemy.schema import MetaData, Table
 from sqlalchemy.orm import sessionmaker, Session
 from werkzeug.utils import secure_filename
 import boto3
-from sqlalchemy.ext.automap import automap_base
-from urllib.parse import urlencode, quote_plus, unquote
+# from sqlalchemy.ext.automap import automap_base
+# from urllib.parse import urlencode, quote_plus, unquote
 
 # Create a simple flask to return the HTML
 app = Flask(__name__)
@@ -27,8 +27,6 @@ app.config['SQLALCHEMY_DATABASE_URI'] = SQLALCHEMY_DATABASE_URI
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 # Create Engine
-
-
 
 # initialize the db connection
 db = SQLAlchemy()
@@ -42,7 +40,6 @@ s3 = boto3.client(
     aws_secret_access_key=aws_secret_access_key_IF
 )
 
-SAMPLE_COLLECTOR_NUMBER = '062/202'
 POKEMON_DATA = None
 
 @app.route("/", methods = ['GET','POST'])
@@ -97,6 +94,7 @@ def returnedCard(query_str=''):
 
     # convert inbound query_str variable into query term for database
     query_str = query_str.replace('%2f','/')
+
         
     metadata = MetaData()
     SwShSeries = Table('SwShSeries', metadata, autoload=True, autoload_with=db.engine)
@@ -105,7 +103,7 @@ def returnedCard(query_str=''):
                         .filter(SwShSeries.c.number == query_str)\
                         .first()
     if not result:
-        flash('We couldnt find your Pokemon in our db', 'danger')
+        flash('We couldnt find your Pokemon in our db or the photo was unable to be parsed', 'danger')
         return redirect(url_for('welcome'))
 
     # create pokemon_Data object from query result
