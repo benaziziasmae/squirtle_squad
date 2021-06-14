@@ -24,15 +24,6 @@ The final visualization is anticipated as an HTML page that would consist of det
 
 Due to the nature & scope of the project, roles will be similar but not identical week to week with some roles being responsibilities of multiple team members.
 
-<<<<<<< HEAD
-| Team Member    | Segment 1 Role | Segment 2 Role | Segment 3 Role | Segment 4 Role |
-| -------------- | -------------- | -------------- | -------------- | -------------- |
-| Aryana Akhavan | ○              | X / ○          |                |                |
-| Asmae Benazizi | ▢              | X / ○          |                |                |
-| Ian Fan        | X / △          | X / △ / ▢      |                |                |
-| Kun Zhao       | ○              | X / △          |                |                |
-| Lydia Zhang    | X / ○          | X / △          |                |                |
-=======
 | Team Member    | Segment 1 Role  | Segment 2 Role | Segment 3 Role | Segment 4 Role |
 |----------------|--------------|-------------|-------------|-------------|
 | Aryana Akhavan | ○            | X / ○            |     △ / ○        |  X / △       |
@@ -40,7 +31,6 @@ Due to the nature & scope of the project, roles will be similar but not identica
 | Ian Fan        | X / △        | X / △ / ▢        |   ▢ / ○ / X     |  X / △ / ○ / ▢      |
 | Kun Zhao       | ○            | X / △            |     △ / ○        |  X / △       |
 | Lydia Zhang    | X / ○        | X / △            |     △ / ○        |  X / △      |
->>>>>>> origin
 
 ## Team Communication Protocol
 
@@ -54,21 +44,6 @@ Languages, Libraries, Software Used for this project are listed by tasks.
 
 ### Database & Storage
 
-<<<<<<< HEAD
-- [Pokémon TCG API](https://pokemontcg.io/)
-- Python ETL
-- SQL PostGRES (established database named _SwShSeries_)
-
-To start, the focus of the app will be the Sword & Shield Series of cards, just to ensure that the project had a reasonable size and scope. Using Python, the data extracted from the Pokémon TCG API was first examined to identify the desired variables necessary for the app, then cleaned to keep only those that were meaningful. After, the dataset was loaded into a .csv file in order to feed into a SQL PostGRES database named _SwShSeries_.
-
-Below are the selected variables to start:
-
-- Pokémon Name
-- Release Date
-- Legality
-- Photo (parsed from link)
-- Prices (low, mid, high)
-=======
 * [Pokémon TCG API](https://pokemontcg.io/)
 * Python
 * Pandas
@@ -97,7 +72,6 @@ For future expansion, we opted to keep the following additional fields:
 * Date (Newly created: indicates the datetime time stamp of when the database was updated)
 
 Ultimately, we went from 24 columns of data to 9 columns of data. The database would then be usable to query a specific entry or entries in order to further narrow down what information can be used to present to the user.
->>>>>>> origin
 
 We further used AWS Buckets for the purpose of hosting Uniform Resource Identifiers (URI) as a temporary location to pass to later described parts of the process. AWS was accessed using the Boto3, the AWS SDK for Python. 
 
@@ -107,15 +81,6 @@ For prototyping, the database is also only setup to contain one entry of each Sw
 
 ### Machine Learning Model
 
-<<<<<<< HEAD
-- Optical Character Recognition
-- Tesseract
-- OpenCV
-
-### Visualization
-
-- HTML/ Flask
-=======
 * Tesseract OCR (Optical Character Recognition)
 * TensorFlow
 * OpenCV
@@ -141,7 +106,6 @@ We opted for Flask implementation which required HTML, Javascript, CSS, and Jinj
 #### Future development
 
 By expanding the database, the app could include a graph plotting the prices as a graph over time assuming the database were further developed in the mentioned methods in aforementioned description. Additional plots could be made per vendor if the database were to be expanded to include other vendors.
->>>>>>> origin
 
 ### Presentation
 
