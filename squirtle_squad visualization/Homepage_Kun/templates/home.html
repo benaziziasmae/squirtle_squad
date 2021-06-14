@@ -1,45 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <style>
-      body {
-        background-image: url("static/images/giga_pika.png"),
-          url("static/images/color.jpeg");
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-        background-size: 100% 100%;
-      }
-      .content {
-        max-width: 500px;
-        margin: auto;
-        padding: 10px;
-      }
-    </style>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>PokemonScanner OCR & Price Comparator</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+    <title>PokemonScanner OCR</title>
     <link
       rel="stylesheet"
       href="{{ url_for('static', filename='css/style.css')}}"
     />
   </head>
   <body>
-    <div class="content">
-      <h1
-        style="
-          font-family: Copperplate;
-          font-size: 150px;
-          color: rgb(221, 224, 45);
-        "
-      >
-        Pokemon Scanner
-      </h1>
-      <h2 style="font-size: 50px; color: #d3cecb">Upload Your Picture</h2>
-      <form method="post" enctype="multipart/form-data">
-        <input type="file" name="fileToUpload" id="fileToUpload" />
-        <input type="submit" value="Upload Image" name="submit" />
-      </form>
+    <div class="container">
+      <div class="subcontainer">
+      <h1>Poké Scanner</h1>
+      <h2>Upload Your Picture</h2>
+        <form method="post" enctype="multipart/form-data">
+          <input type="file" name="fileToUpload" id="fileToUpload" />
+          <input type="submit" value="Upload Image" name="submit" />
+        </form>
+      </div>
       <!-- <a class="btn btn-border-w btn-round" href="visualization.html"></a> -->
     </div>
   </body>
