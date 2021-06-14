@@ -1,0 +1,47 @@
+html, body {
+    text-align: center;
+    color: #ffffff;
+    margin: auto;
+}
+
+h3{
+    margin:auto;
+}
+
+img {
+    max-width: 50%;     
+    height: auto;
+    margin: auto;
+    position: center;
+} 
+
+select {
+    border: 2px solid #d3cecb;
+    padding: 5px 5px;
+    border-radius: 0.8em;
+    background-color: #d3cecb;
+    transition: 1s;
+}
+
+table{
+    margin: auto;
+    padding: 30px;
+    position: center;
+    text-align: center;
+}
+
+button {
+    border: 2px solid #d3cecb;
+    padding: 0.8em 1.6em;
+    border-radius: 0.8em;
+    background-color: #d3cecb;
+    transition: 1s;
+    max-width: 30%;
+    min-width: fit-content;
+    margin: auto;
+}
+
+th {
+    min-width: 0px;
+
+}
