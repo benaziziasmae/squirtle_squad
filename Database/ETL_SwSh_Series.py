@@ -5,7 +5,7 @@ import datetime
 import sys
 import os
 sys.path.append(".")
-from config import tcgapikey, pgpasswordLC, pgpassword
+from config import tcgapikey, SQLALCHEMY_DATABASE_URI
 from sqlalchemy import create_engine, dialects
 from re import search
 
@@ -60,10 +60,6 @@ for i in range(len(data['data'])):
     else:
         data['data'][i]['number'] = str(data['data'][i]['number']).zfill(3) + "/" + str(data['data'][i]['set']['printedTotal']).zfill(3)
 
- #remove direct market
-    for types in data['data'][i]['prices']:
-        del data['data'][i]['prices'][types]['directLow']
-
 # create data frame & drop unneeded information
 data_clean_df = pd.DataFrame(data['data']).drop(
     columns=[
@@ -89,7 +85,7 @@ data_clean_df = pd.DataFrame(data['data']).drop(
 
 # link to the database & create engine
 # engine = create_engine(f'postgresql://postgres:{pgpassword}@localhost:5432/PokemonTCG', echo=False)
-engine = create_engine (f'postgresql://postgres:{pgpasswordLC}@database-1.ckh3ticwdlgo.us-east-2.rds.amazonaws.com:5432/postgres', echo=False)
+engine = create_engine (SQLALCHEMY_DATABASE_URI, echo=False)
 
 # load into database with format
 data_clean_df.to_sql(
