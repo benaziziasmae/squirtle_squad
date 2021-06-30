@@ -7,19 +7,21 @@ from datetime import datetime
 from flask_sqlalchemy import SQLAlchemy
 from .GoogleVisionApi import ImgToStringOCR, UnableToDecodeImageError
 
-from .config import pgpassword, secret_key, SQLALCHEMY_DATABASE_URI
+from .config import pgpassword, SQLALCHEMY_DATABASE_URI
 from .config import aws_access_key_id_IF, aws_secret_access_key_IF, bucket_url_IF, bucket_name_IF
 # from sqlalchemy import create_engine
 from sqlalchemy.schema import MetaData, Table
 from sqlalchemy.orm import sessionmaker, Session
 from werkzeug.utils import secure_filename
 import boto3
+import secrets
+
 # from sqlalchemy.ext.automap import automap_base
 # from urllib.parse import urlencode, quote_plus, unquote
 
 # Create a simple flask to return the HTML
 app = Flask(__name__)
-app.secret_key = secret_key
+app.secret_key = secrets.token_urlsafe(16)
 app.config['MAX_CONTENT_LENGTH'] = 1024 * 1024 * 16
 app.config['UPLOAD_EXTENSIONS'] = ['.jpg', '.png', '.gif']
 app.config['UPLOAD_PATH'] = 'uploads'
