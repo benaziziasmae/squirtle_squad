@@ -90,6 +90,11 @@ function buildLegalityTable() {
         )
 }
 
+function graphOverTime() {
+    
+}
+
+
 // Build when page loads
 buildSelectD3(card_info)
 buildPriceTable()
