@@ -37,6 +37,13 @@ for i in range(len(data['data'])):
         data['data'][i]['prices']=data['data'][i]['tcgplayer']['prices']
     except KeyError:
         data['data'][i]['prices'] = None
+
+    #remove direct market; direct market will not exist for newer cards
+    try:
+        for types in data['data'][i]['prices']:
+            del data['data'][i]['prices'][types]['directLow']
+    except TypeError:
+        pass
     
  # set info
     #set_id
@@ -59,6 +66,8 @@ for i in range(len(data['data'])):
         data['data'][i]['number'] = data['data'][i]['number']
     else:
         data['data'][i]['number'] = str(data['data'][i]['number']).zfill(3) + "/" + str(data['data'][i]['set']['printedTotal']).zfill(3)
+
+
 
 # create data frame & drop unneeded information
 data_clean_df = pd.DataFrame(data['data']).drop(
@@ -88,6 +97,8 @@ data_clean_df = pd.DataFrame(data['data']).drop(
 engine = create_engine (SQLALCHEMY_DATABASE_URI, echo=False)
 
 # load into database with format
+
+'''
 data_clean_df.to_sql(
     'SwShSeries',
     con=engine,
@@ -98,8 +109,8 @@ data_clean_df.to_sql(
     'images':dialects.postgresql.JSON,
     'prices':dialects.postgresql.JSON}
     )
-
 '''
+
 data_clean_df.to_sql(
     'SwShSeries',
     con=engine,
@@ -110,7 +121,7 @@ data_clean_df.to_sql(
     'images':dialects.postgresql.JSON,
     'prices':dialects.postgresql.JSON}
     )
-'''
+
 
 
 print('PGAdmin Updated')

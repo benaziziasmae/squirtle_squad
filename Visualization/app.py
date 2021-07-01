@@ -103,23 +103,25 @@ def returnedCard(query_str=''):
     metadata = MetaData()
     SwShSeries = Table('SwShSeries', metadata, autoload=True, autoload_with=db.engine)
 
-    result = db.session.query(SwShSeries)\
+    results = db.session.query(SwShSeries)\
                         .filter(SwShSeries.c.number == query_str)\
-                        .first()
-    if not result:
+                        .order_by(SwShSeries.c.date.desc())
+                        
+    if not results:
         flash('We couldnt find your Pokemon in our db', 'danger')
         return redirect(url_for('welcome'))
 
     # create pokemon_Data object from query result
     pokemon_Data = {
-        "id":result.id,
-        "name":result.name,
-        "number":result.number,
-        "legalities": result.legalities,
-        "images":result.images,
-        "prices": result.prices,
-        "set_id":result.set_id,
-        "set_name":result.set_name,
-        "date": datetime.strftime(result.date,'%Y-%m-%d')
+        "id":results[0].id,
+        "name":results[0].name,
+        "number":results[0].number,
+        "legalities": results[0].legalities,
+        "images":results[0].images,
+        "prices": results[0].prices,
+        "set_id":results[0].set_id,
+        "set_name":results[0].set_name,
+        "date": datetime.strftime(results[0].date,'%Y-%m-%d')
     }
-    return render_template("visualization.html", card_data=pokemon_Data)
+
+    return render_template("visualization.html", card_data=pokemon_Data, over_time_data = results)
