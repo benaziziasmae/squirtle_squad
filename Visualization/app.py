@@ -124,4 +124,11 @@ def returnedCard(query_str=''):
         "date": datetime.strftime(results[0].date,'%Y-%m-%d')
     }
 
+    '''
+    x=[]
+    for result in results:
+        for type in result.prices:
+            x.append(result.date)
+    '''
+
     return render_template("visualization.html", card_data=pokemon_Data, over_time_data = results)

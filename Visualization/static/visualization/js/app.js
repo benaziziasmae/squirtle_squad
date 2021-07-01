@@ -8,7 +8,7 @@ var selectDropDown = d3.select("#cardtype");
 selectDropDown.on("change",buildPriceTable)
 
 // build the dropdown menu
-function buildSelectD3(card_info) {
+function buildSelectD3() {
     Object.keys(card_info.prices).forEach(card_type =>
         {
             selectDropDown
@@ -90,12 +90,16 @@ function buildLegalityTable() {
         )
 }
 
+/*
 function graphOverTime() {
-    
-}
+
+    graph_data[0]['prices'][d3.select("#cardtype").node().value]
+    }
+*/
 
 
 // Build when page loads
-buildSelectD3(card_info)
+
+buildSelectD3()
 buildPriceTable()
 buildLegalityTable()
