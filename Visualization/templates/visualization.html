@@ -47,31 +47,41 @@
     </div>
 
     <!--tables-->
-    <div class= "col-md-12" style="padding-left:5%; padding-right:5%"> 
-        <!--price table-->  
-        <div class = "table-responsive">
-            <table class="table" id ="priceTable">
-                <!--table's header row-->
-                <thead id = "PriceHead">
-                </thead>
-                <!--table's body rows-->
-                <tbody id = "PriceBody">
-                </tbody>
-            </table>
+    <div class="row">
+        <div class= "col-md-12" style="padding-left:5%; padding-right:5%"> 
+            <!--price table-->  
+            <div class = "table-responsive">
+                <table class="table" id ="priceTable">
+                    <!--table's header row-->
+                    <thead id = "PriceHead">
+                    </thead>
+                    <!--table's body rows-->
+                    <tbody id = "PriceBody">
+                    </tbody>
+                </table>
+            </div>
+            <br>
+
+            <!--legality table-->
+            <div class = "table-responsive">
+                <table class="table" id ="LegalityTable">
+                    <!--table's header row-->
+                    <thead id = "LegalityHead"></thead>
+                    <!--table's body rows-->
+                    <tbody id = "LegalityBody"></tbody>
+                </table>
+            </div>
         </div>
         <br>
+    </div>
 
-        <!--legality table-->
-        <div class = "table-responsive">
-            <table class="table" id ="LegalityTable">
-                <!--table's header row-->
-                <thead id = "LegalityHead"></thead>
-                <!--table's body rows-->
-                <tbody id = "LegalityBody"></tbody>
-            </table>
+    <!--price history graph-->
+    <div class="row">
+        <div class= "col-md-12" style="padding-left:5%; padding-right:5%"> 
+            <div id="price_history"></div>
         </div>
     </div>
-    <br>
+
 
     <!--button to go back to 'home'-->
     <div class = "row">
@@ -90,6 +100,7 @@
     -->
     <script> var card_data = {{ card_data | safe }} </script>
     <script> var graph_data = {{ graph_data | safe }} </script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <script src='{{url_for("static", filename="visualization/js/app.js")}}'></script>
 
 </body>

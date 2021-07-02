@@ -16,9 +16,6 @@ from werkzeug.utils import secure_filename
 import boto3
 import secrets
 
-# from sqlalchemy.ext.automap import automap_base
-# from urllib.parse import urlencode, quote_plus, unquote
-
 # Create a simple flask to return the HTML
 app = Flask(__name__)
 app.secret_key = secrets.token_urlsafe(16)
@@ -28,24 +25,17 @@ app.config['UPLOAD_PATH'] = 'uploads'
 app.config['SQLALCHEMY_DATABASE_URI'] = SQLALCHEMY_DATABASE_URI
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
-# Create Engine
-
-
-
 # initialize the db connection
 db = SQLAlchemy()
 db.init_app(app)
 
-### set config to boto3 client
+# set config to boto3 client
 s3 = boto3.client(
     service_name='s3',
     region_name='ca-central-1',
     aws_access_key_id=aws_access_key_id_IF,
     aws_secret_access_key=aws_secret_access_key_IF
 )
-
-
-POKEMON_DATA = None
 
 @app.route("/", methods = ['GET','POST'])
 def welcome():
@@ -133,8 +123,7 @@ def returnedCard(query_str=''):
         graph_data[style]={}
         for price_category in results[0].prices[style]:
             graph_data[style][price_category]=[]
-    
-        
+            
     for entry in results:
         #graph_data['date'].append(datetime.date(entry.date))
         graph_data['date'].append(datetime.strftime(entry.date,'%Y-%m-%d'))

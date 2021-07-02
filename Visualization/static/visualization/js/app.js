@@ -97,18 +97,76 @@ function buildLegalityTable() {
         )
 }
 
-/*
+
 function buildChart() {
+    let price_history = d3.select("#price_history")
+    price_history.html("");
 
-    console.log(graph_data[d3.select("#cardtype").node().value])
+    var data = []
+    let style_category = graph_data[d3.select("#cardtype").node().value]
 
+    for (let price_category in style_category) {
+        data.push(
+            {
+                type: "scatter",
+                mode: "lines",
+                x: graph_data['date'],
+                y: graph_data[d3.select("#cardtype").node().value][price_category],
+                name: price_category
+            }
+        )
     }
-*/
+
+    /*
+    var traceLow = {
+        type: "scatter",
+        mode: "lines",
+        x: graph_data['date'],
+        y: graph_data[d3.select("#cardtype").node().value]["low"]
+    }
+
+    var traceMid = {
+        type: "scatter",
+        mode: "lines",
+        x: graph_data['date'],
+        y: graph_data[d3.select("#cardtype").node().value]["mid"]
+    }
+    
+    var traceHigh = {
+        type: "scatter",
+        mode: "lines",
+        x: graph_data['date'],
+        y: graph_data[d3.select("#cardtype").node().value]["high"]
+    }
+
+    var traceMarket= {
+        type: "scatter",
+        mode: "lines",
+        x: graph_data['date'],
+        y: graph_data[d3.select("#cardtype").node().value]["market"]
+    }
+    
+    var data = [traceLow,traceMid,traceHigh,traceMarket]
+    */
+
+    var layout = {
+        title: "Price History",
+        xaxis:{
+            type: 'date'
+        },
+        yaxis:{
+            type: 'linear'
+        }
+    }
+    
+    Plotly.newPlot('price_history', data, layout, {responsive:true});
+}
+
 
 
 // Build when page loads
 buildSelectD3()
 buildPriceTable()
 buildLegalityTable()
-//buildChart()
+buildChart()
 
