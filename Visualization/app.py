@@ -121,14 +121,23 @@ def returnedCard(query_str=''):
         "prices": results[0].prices,
         "set_id":results[0].set_id,
         "set_name":results[0].set_name,
-        "date": datetime.strftime(results[0].date,'%Y-%m-%d')
+        "date": datetime.date(results[0].date)
     }
 
-    '''
-    x=[]
-    for result in results:
-        for type in result.prices:
-            x.append(result.date)
-    '''
+    # create graph_data from query result
+    graph_data={}
 
-    return render_template("visualization.html", card_data=pokemon_Data, over_time_data = results)
+    graph_data['date']=[]
+    for style in results[0].prices:
+        graph_data[style]={}
+        for price_category in results[0].prices[style]:
+            graph_data[style][price_category]=[]
+    
+        
+    for entry in results:
+        graph_data['date'].append(datetime.date(entry.date))
+        for style in entry.prices:
+            for price_category in results[0].prices[style]:
+                graph_data[style][price_category].append(entry.prices[style][price_category])
+
+    return render_template("visualization.html", card_data=pokemon_Data, over_time_data = graph_data)

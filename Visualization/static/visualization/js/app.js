@@ -91,9 +91,9 @@ function buildLegalityTable() {
 }
 
 /*
-function graphOverTime() {
+function buildChart() {
 
-    graph_data[0]['prices'][d3.select("#cardtype").node().value]
+    graph_data[d3.select("#cardtype").node().value]
     }
 */
 
