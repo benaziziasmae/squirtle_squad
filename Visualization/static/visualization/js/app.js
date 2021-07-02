@@ -97,7 +97,6 @@ function buildLegalityTable() {
         )
 }
 
-
 function buildChart() {
     let price_history = d3.select("#price_history")
     price_history.html("");
