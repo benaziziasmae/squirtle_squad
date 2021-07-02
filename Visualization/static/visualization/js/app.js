@@ -5,10 +5,17 @@ const card_info = card_data;
 var selectDropDown = d3.select("#cardtype");
 
 // Attach event to listen for change
-selectDropDown.on("change",buildPriceTable)
+//selectDropDown.on("change",buildPriceTable)
+selectDropDown.on("change",buildPage)
+
+// two in 1 functions
+function buildPage(){
+    buildChart()
+    buildPriceTable()
+}
 
 // build the dropdown menu
-function buildSelectD3(card_info) {
+function buildSelectD3() {
     Object.keys(card_info.prices).forEach(card_type =>
         {
             selectDropDown
@@ -90,12 +97,48 @@ function buildLegalityTable() {
         )
 }
 
-function graphOverTime() {
+function buildChart() {
+    let price_history = d3.select("#price_history")
+    price_history.html("");
+
+    var data = []
+    let style_category = graph_data[d3.select("#cardtype").node().value]
+
+    // Append price history data by category
+    for (let price_category in style_category) {
+        data.push(
+            {
+                type: "scatter",
+                mode: "lines",
+                x: graph_data['date'],
+                y: graph_data[d3.select("#cardtype").node().value][price_category],
+                name: price_category
+            }
+        )
+    }
+
+    var layout = {
+        title: "Price History",
+        xaxis:{
+            type: 'date',
+            tickformat: '%Y-%m-%d',
+            tickmode:"array",
+            tickvals:graph_data['date']
+        },
+        yaxis:{
+            type: 'linear',
+            rangemode: 'tozero'
+        }
+    }
     
+    Plotly.newPlot('price_history', data, layout, {responsive:true});
 }
 
 
+
 // Build when page loads
-buildSelectD3(card_info)
+buildSelectD3()
 buildPriceTable()
 buildLegalityTable()
+buildChart()
+
