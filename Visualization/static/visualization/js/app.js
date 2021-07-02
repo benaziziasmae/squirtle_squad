@@ -5,8 +5,8 @@ const card_info = card_data;
 var selectDropDown = d3.select("#cardtype");
 
 // Attach event to listen for change
-selectDropDown.on("change",buildPriceTable)
-//selectDropDown.on("change",buildPage)
+//selectDropDown.on("change",buildPriceTable)
+selectDropDown.on("change",buildPage)
 
 // two in 1 functions
 function buildPage(){
@@ -105,6 +105,7 @@ function buildChart() {
     var data = []
     let style_category = graph_data[d3.select("#cardtype").node().value]
 
+    // Append price history data by category
     for (let price_category in style_category) {
         data.push(
             {
@@ -117,45 +118,17 @@ function buildChart() {
         )
     }
 
-    /*
-    var traceLow = {
-        type: "scatter",
-        mode: "lines",
-        x: graph_data['date'],
-        y: graph_data[d3.select("#cardtype").node().value]["low"]
-    }
-
-    var traceMid = {
-        type: "scatter",
-        mode: "lines",
-        x: graph_data['date'],
-        y: graph_data[d3.select("#cardtype").node().value]["mid"]
-    }
-    
-    var traceHigh = {
-        type: "scatter",
-        mode: "lines",
-        x: graph_data['date'],
-        y: graph_data[d3.select("#cardtype").node().value]["high"]
-    }
-
-    var traceMarket= {
-        type: "scatter",
-        mode: "lines",
-        x: graph_data['date'],
-        y: graph_data[d3.select("#cardtype").node().value]["market"]
-    }
-    
-    var data = [traceLow,traceMid,traceHigh,traceMarket]
-    */
-
     var layout = {
         title: "Price History",
         xaxis:{
-            type: 'date'
+            type: 'date',
+            tickformat: '%Y-%m-%d',
+            tickmode:"array",
+            tickvals:graph_data['date']
         },
         yaxis:{
-            type: 'linear'
+            type: 'linear',
+            rangemode: 'tozero'
         }
     }
     
