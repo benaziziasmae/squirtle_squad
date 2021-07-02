@@ -121,7 +121,8 @@ def returnedCard(query_str=''):
         "prices": results[0].prices,
         "set_id":results[0].set_id,
         "set_name":results[0].set_name,
-        "date": datetime.date(results[0].date)
+        #"date": datetime.date(results[0].date)
+        "date": datetime.strftime(results[0].date, '%Y-%m-%d')
     }
 
     # create graph_data from query result
@@ -135,9 +136,10 @@ def returnedCard(query_str=''):
     
         
     for entry in results:
-        graph_data['date'].append(datetime.date(entry.date))
+        #graph_data['date'].append(datetime.date(entry.date))
+        graph_data['date'].append(datetime.strftime(entry.date,'%Y-%m-%d'))
         for style in entry.prices:
             for price_category in results[0].prices[style]:
                 graph_data[style][price_category].append(entry.prices[style][price_category])
 
-    return render_template("visualization.html", card_data=pokemon_Data, over_time_data = graph_data)
+    return render_template("visualization.html", card_data=pokemon_Data, graph_data = graph_data)

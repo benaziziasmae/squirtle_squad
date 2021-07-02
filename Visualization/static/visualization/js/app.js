@@ -6,6 +6,13 @@ var selectDropDown = d3.select("#cardtype");
 
 // Attach event to listen for change
 selectDropDown.on("change",buildPriceTable)
+//selectDropDown.on("change",buildPage)
+
+// two in 1 functions
+function buildPage(){
+    buildChart()
+    buildPriceTable()
+}
 
 // build the dropdown menu
 function buildSelectD3() {
@@ -93,13 +100,15 @@ function buildLegalityTable() {
 /*
 function buildChart() {
 
-    graph_data[d3.select("#cardtype").node().value]
+    console.log(graph_data[d3.select("#cardtype").node().value])
+
     }
 */
 
 
 // Build when page loads
-
 buildSelectD3()
 buildPriceTable()
 buildLegalityTable()
+//buildChart()
+
