@@ -1,0 +1,1 @@
+C:/Users/ianfa/anaconda3/envs/mlenv/python.exe "c:/Users/ianfa/Desktop/bootcamp/Capstone/squirtle_squad/Database/ETL_SwSh_Series.py"

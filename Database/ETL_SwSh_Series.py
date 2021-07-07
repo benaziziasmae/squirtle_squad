@@ -122,10 +122,8 @@ data_clean_df.to_sql(
     'prices':dialects.postgresql.JSON}
     )
 
-
-
 print('PGAdmin Updated')
 
-data_clean_df.to_csv(f'{os.path.dirname(__file__)}\SwShSeries_{datetime.date.today()}.csv', index = False)
+#data_clean_df.to_csv(f'{os.path.dirname(__file__)}\SwShSeries_{datetime.date.today()}.csv', index = False)
 
-print(f'CSV created @ {os.path.dirname(__file__)}')
+#print(f'CSV created @ {os.path.dirname(__file__)}')
